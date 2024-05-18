@@ -19,7 +19,7 @@
 .section__container {
   max-width: var(--max-width);
   margin: auto;
-  padding: 5rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .section__header {
@@ -80,8 +80,8 @@ body {
 .header {
   padding-top: 4rem;
   background-image: linear-gradient(
-      rgba(17, 43, 90, 0.7),
-      rgba(17, 43, 90, 0.7)
+      rgba(98, 114, 103, 0.7),
+      rgba(6, 57, 31, 0.7)
     ),
     url("assets/header.jpg");
   background-position: center center;
@@ -545,7 +545,7 @@ nav {
 
 @media (width > 768px) {
   nav {
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
     position: static;
     display: flex;
     align-items: center;

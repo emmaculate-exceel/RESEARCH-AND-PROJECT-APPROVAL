@@ -1,17 +1,15 @@
-// scripts.js
-
-function openModal() {
-    document.getElementById("signInModal").style.display = "block";
+function openModal(modalId) {
+    document.getElementById(modalId).style.display = "block";
 }
 
-function closeModal() {
-    document.getElementById("signInModal").style.display = "none";
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
 }
 
 window.onclick = function(event) {
     var modal = document.getElementById("signInModal");
     if (event.target == modal) {
-        closeModal();
+        closeModal("signInModal");
     }
 }
 
@@ -36,6 +34,17 @@ function showDateDropdown() {
     var dropdown = document.getElementById("date-dropdown");
     dropdown.classList.toggle("show");
 }
+
+document.getElementById("book-now-button").addEventListener("click", function(event) {
+    console.log("Button clicked!");
+    var paymentSection = document.getElementById("payment-section");
+    paymentSection.style.display = "block";
+});
+
+function showSignInForm() {
+    openModal("signInModal");
+}
+
 
 // Close the dropdown menu if the user clicks outside of it
 window.addEventListener("click", function(event) {
@@ -141,3 +150,9 @@ document.getElementById("book-now-button").addEventListener("click", function(ev
     paymentSection.style.display = "block";
 });
 
+function showSignInForm() {
+    // Get the sign-in form modal element
+    var signInFormModal = document.getElementById('signin-form');
+    // Display the sign-in form modal
+    signInFormModal.style.display = 'block';
+}
