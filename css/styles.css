@@ -52,7 +52,7 @@
 }
 
 img {
-  width: 100%;
+  width: 4rem;
   display: flex;
 }
 
@@ -545,7 +545,7 @@ nav {
 
 @media (width > 768px) {
   nav {
-    padding: 0rem 1rem;
+    padding: 1.5rem 1rem;
     position: static;
     display: flex;
     align-items: center;
