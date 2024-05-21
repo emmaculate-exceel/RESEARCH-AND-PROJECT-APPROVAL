@@ -7,16 +7,41 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+
+    <!-- font  -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel='icon' type='image/x-icon' href='./css/fontawesome-free-5.14.0-web/trainH.svg'/>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>SilverLine Express</title>
   </head>
   <body>
   <header class="header">
+ <!-- login form container -->
+    <div class="login-form-container hidden" id="login-form-container">
+      <form action="#">
+        <h3 class="form-title">Login</h3>
+        <input type="text" class="user-name-input" placeholder="Username" required>
+        <input type="password" name="password" class="user-password-input" placeholder="Password" required>
+        <a href="#" class="login-btn">Login</a>
+        <div class="forgotten-box">
+          <p class="forgot-text">Forgot password?</p>
+          <a href="#" class="forgot-link">Reset password</a>
+        </div>
+      </form>
+
+      <div class="overlay hidden" id="overlay">
+      </div>
+    </div>
+<!-- END -->
+
       <nav>
           <div class="nav__bar">
               <div class="logo">
@@ -31,7 +56,8 @@
               <li><a href="#service">Service</a></li>
               <li><a href="#offer">Offer</a></li>
               <li><a href="#client">Client</a></li>
-              <li><button class="btn" onclick="scrollToSection('signin-form')">Sign In</button></li>
+              <li><button class="btn" id="sign-in">Sign In</button></li>
+
           </ul>
       </nav>
       <div class="section__container header__container" id="home">
@@ -480,6 +506,8 @@
     document.getElementById("payment-section").style.display = "block";
   });
 </script>
+
+<script src="./js/toggle.js"></script>
   </body>
     
 
