@@ -1,3 +1,6 @@
+window.onload = function() {
+    alert("Welcome to Silverline where services is at it peek");
+}
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
 }
@@ -20,15 +23,29 @@ function scrollToSection(sectionId) {
     }
 }
 
-function showDepartureDropdown() {
-    var dropdown = document.getElementById("departure-dropdown");
-    dropdown.classList.toggle("show");
-}
-
 function showArrivalDropdown() {
     var dropdown = document.getElementById("arrival-dropdown");
     dropdown.classList.toggle("show");
 }
+
+function selectDestination(event, destination) {
+    event.preventDefault(); // Prevent the default action of the anchor tag
+    var arrivalInput = document.getElementById("arrival");
+    arrivalInput.value = destination;
+    closeDropdown();
+}
+
+function closeDropdown() {
+    var dropdown = document.getElementById("arrival-dropdown");
+    dropdown.classList.remove("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.addEventListener("click", function(event) {
+    if (!event.target.matches('#arrival') && !event.target.closest('.dropdown')) {
+        closeDropdown();
+    }
+});
 
 function showDateDropdown() {
     var dropdown = document.getElementById("date-dropdown");
@@ -93,15 +110,6 @@ function scrollToSection(sectionId) {
     }
 }
 
-function showDepartureDropdown() {
-    var dropdown = document.getElementById("departure-dropdown");
-    dropdown.classList.toggle("show");
-}
-
-function showArrivalDropdown() {
-    var dropdown = document.getElementById("arrival-dropdown");
-    dropdown.classList.toggle("show");
-}
 
 function showDateDropdown() {
     var dropdown = document.getElementById("date-dropdown");
@@ -142,7 +150,7 @@ window.addEventListener("click", function(event) {
             }
         }
     }
-}
+})
 
 document.getElementById("book-now-button").addEventListener("click", function(event) {
     console.log("Button clicked!");

@@ -46,42 +46,33 @@
                   <div class="booking__input">
                       <label for="departure">From</label>
                       <div class="dropdown">
-                          <input type="text" placeholder="Departure" onclick="showDepartureDropdown()">
+                          <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly>
                           <div class="dropdown-content" id="departure-dropdown">
-                              <a href="#">Lagos</a>
-                              <a href="#">Abuja</a>
-                              <a href="#">Ibadan</a>
-                              <a href="#">Enugu</a>
-                              <a href="#">Port Harcourt</a>
+                              <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
+                              <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
+                              <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
+                              <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
+                              <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
                           </div>
                       </div>
                   </div>
                   <div class="booking__input">
                       <label for="arrival">To</label>
                       <div class="dropdown">
-                          <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()">
+                          <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly>
                           <div class="dropdown-content" id="arrival-dropdown">
-                              <a href="#">Lagos</a>
-                              <a href="#">Abuja</a>
-                              <a href="#">Ibadan</a>
-                              <a href="#">Enugu</a>
-                              <a href="#">Port Harcourt</a>
+                              <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
+                              <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
+                              <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
+                              <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
+                              <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
                           </div>
                       </div>
                   </div>
                   <div class="booking__input">
                       <label for="date">Date</label>
                       <div class="dropdown">
-                          <input type="text" placeholder="Date" onclick="showDateDropdown()">
-                          <div class="dropdown-content" id="date-dropdown">
-                              <a href="#">Sun 12 May - 06:03 - 08:03</a>
-                              <a href="#">Sun 12 May - 15:03 - 17:01</a>
-                              <a href="#">Thu 16 May - 10:03 - 12:01</a>
-                              <a href="#">Thu 16 May - 13:06 - 14:01</a>
-                              <a href="#">Mon 27 May - Time 09:00 - 11:10</a>
-                              <a href="#">Mon 27 May - Time 16:30 - 18:34</a>
-                              <a href="#">Tue 04 June - Time 14:00 - 16:00</a>
-                          </div>
+                          <input type="date" onclick="showDateDropdown()">
                       </div>
                   </div>
                   <div class="booking__btn">
@@ -364,7 +355,7 @@
       <div class="section__container footer__container">
         <div class="footer__col">
           <div class="logo">
-            <a href="#"><img src="assets/logo.png" alt="logo" /></a>
+            <a href="#"><img src="./css/fontawesome-free-5.14.0-web/mod1.svg" alt="logo" /></a>
           </div>
           <p>
             Experience seamless travel planning through our comprehensive
@@ -430,7 +421,7 @@
         </div>
       </div>
       <div class="footer__bar">
-        Copyright © 2023 KEM Web Designs. All rights reserved.
+        Copyright © 2023 Silverline Web Designs. All rights reserved.
       </div>
     </footer>
 
@@ -438,9 +429,6 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/scripts.js"></script>
-    <script src="./js/scripts.js"></script>
-
-
     <!--<div id="signin-form" class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Sign In</h2>
