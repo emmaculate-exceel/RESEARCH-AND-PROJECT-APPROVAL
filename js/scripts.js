@@ -20,15 +20,29 @@ function scrollToSection(sectionId) {
     }
 }
 
-function showDepartureDropdown() {
-    var dropdown = document.getElementById("departure-dropdown");
-    dropdown.classList.toggle("show");
-}
-
 function showArrivalDropdown() {
     var dropdown = document.getElementById("arrival-dropdown");
     dropdown.classList.toggle("show");
 }
+
+function selectDestination(event, destination) {
+    event.preventDefault(); // Prevent the default action of the anchor tag
+    var arrivalInput = document.getElementById("arrival");
+    arrivalInput.value = destination;
+    closeDropdown();
+}
+
+function closeDropdown() {
+    var dropdown = document.getElementById("arrival-dropdown");
+    dropdown.classList.remove("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.addEventListener("click", function(event) {
+    if (!event.target.matches('#arrival') && !event.target.closest('.dropdown')) {
+        closeDropdown();
+    }
+});
 
 function showDateDropdown() {
     var dropdown = document.getElementById("date-dropdown");
@@ -93,15 +107,6 @@ function scrollToSection(sectionId) {
     }
 }
 
-function showDepartureDropdown() {
-    var dropdown = document.getElementById("departure-dropdown");
-    dropdown.classList.toggle("show");
-}
-
-function showArrivalDropdown() {
-    var dropdown = document.getElementById("arrival-dropdown");
-    dropdown.classList.toggle("show");
-}
 
 function showDateDropdown() {
     var dropdown = document.getElementById("date-dropdown");

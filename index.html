@@ -46,26 +46,26 @@
                   <div class="booking__input">
                       <label for="departure">From</label>
                       <div class="dropdown">
-                          <input type="text" placeholder="Departure" onclick="showDepartureDropdown()">
+                          <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly>
                           <div class="dropdown-content" id="departure-dropdown">
-                              <a href="#">Lagos</a>
-                              <a href="#">Abuja</a>
-                              <a href="#">Ibadan</a>
-                              <a href="#">Enugu</a>
-                              <a href="#">Port Harcourt</a>
+                              <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
+                              <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
+                              <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
+                              <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
+                              <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
                           </div>
                       </div>
                   </div>
                   <div class="booking__input">
                       <label for="arrival">To</label>
                       <div class="dropdown">
-                          <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()">
+                          <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly>
                           <div class="dropdown-content" id="arrival-dropdown">
-                              <a href="#">Lagos</a>
-                              <a href="#">Abuja</a>
-                              <a href="#">Ibadan</a>
-                              <a href="#">Enugu</a>
-                              <a href="#">Port Harcourt</a>
+                              <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
+                              <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
+                              <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
+                              <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
+                              <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
                           </div>
                       </div>
                   </div>
