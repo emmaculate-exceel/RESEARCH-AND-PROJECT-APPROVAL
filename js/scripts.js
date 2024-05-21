@@ -1,3 +1,6 @@
+window.onload = function() {
+    alert("Welcome to Silverline where services is at it peek");
+}
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
 }
@@ -142,7 +145,7 @@ window.addEventListener("click", function(event) {
             }
         }
     }
-}
+})
 
 document.getElementById("book-now-button").addEventListener("click", function(event) {
     console.log("Button clicked!");

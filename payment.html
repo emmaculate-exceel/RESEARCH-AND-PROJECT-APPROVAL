@@ -52,6 +52,7 @@
             margin-bottom: 1rem;
             border: 1px solid #ccc;
             border-radius: 3px;
+	    box-sizing:border-box;
         }
 
         .payment-form button {
@@ -81,17 +82,17 @@
             <li>Departure: [Departure Location]</li>
             <li>Arrival: [Arrival Location]</li>
         </ul>
-    </div>
+    </div class="container" id="container">
     <form id="payment-form" class="payment-form">
-        <label for="card-number">Card Number:</label>
-        <input type="text" id="card-number" name="card-number" required>
-        <label for="name-on-card">Name on Card:</label>
-        <input type="text" id="name-on-card" name="name-on-card" required>
-        <label for="expiry-date">Expiry Date:</label>
-        <input type="text" id="expiry-date" name="expiry-date" required>
-        <label for="cvv">CVV:</label>
+        <!--<label for="card-number">Card Number:</label>-->
+        <input type="number" id="card-number" placeholder="INPUT CARD NUMBER" name="card-number" required>
+        <!--<label for="name-on-card">Name on Card:</label>-->
+        <input type="text" id="name-on-card" placeholder="INPUT CVV" name="name-on-card" required>
+        <!--<label for="expiry-date">Expiry Date:</label>-->
+        <input type="month" id="expiry-date" placeholder="INPUT EXPIRY DATE" name="expiry-date" required>
+        <!--<label for="cvv">CVV:</label>-->
         <input type="text" id="cvv" name="cvv" required>
-        <button type="submit">Pay Now</button>
+        <button type="button">Pay Now</button>
     </form>
 </body>
 </html>
