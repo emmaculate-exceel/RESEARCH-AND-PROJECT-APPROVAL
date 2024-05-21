@@ -61,3 +61,7 @@ ScrollReveal().reveal(".offer__card", {
   ...scrollRevealOption,
   interval: 500,
 });
+
+function togglePopup() {
+  document.getElementById("popup-1").classList.toggle("active");
+}
