@@ -328,7 +328,8 @@ nav {
 }
 
 .booking__btn {
-  text-align: right;
+    text-align: right;
+    grid-column-start: 3;
 }
 
 .service__grid {
