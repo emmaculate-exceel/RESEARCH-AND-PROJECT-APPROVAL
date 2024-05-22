@@ -158,8 +158,9 @@ img {
   display: flex;
 }
 
-.googlePlay, .appStore {
+img.storeM {
     display:flex !important;
+    width:100%;
 }
 
 a {
@@ -182,6 +183,11 @@ ul {
     cursor: pointer;
     transition: 0.3s;
 }
+.sub-btn:hover{
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+    
 .logo {
   max-width: 150px;
 }
