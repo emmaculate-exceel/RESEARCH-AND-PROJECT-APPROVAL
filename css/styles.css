@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #1d4ed8;
+  --primary-color: #22c55e;
   --primary-color-dark: var(--primary-color);
   --text-dark: #4d4d4d;
   --text-light: #767268;
@@ -181,11 +181,10 @@ body {
 
 .header {
   padding-top: 4rem;
-  background-image: linear-gradient(
-      rgba(17, 43, 90, 0.7),
-      rgba(17, 43, 90, 0.7)
-    ),
-    url("/assets/showimage.jpeg");
+  background-image: /*linear-gradient(
+      rgba(11, 148, 72, 0.7),
+      rgba(11, 148, 72, 0.7)
+    ),*/ url("/assets/showimage.jpeg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
