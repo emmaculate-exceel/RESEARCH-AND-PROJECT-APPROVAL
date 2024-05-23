@@ -158,6 +158,11 @@ img {
   display: flex;
 }
 
+img.storeM {
+    display:flex !important;
+    width:100%;
+}
+
 a {
   text-decoration: none;
 }
@@ -166,6 +171,23 @@ ul {
   list-style: none;
 }
 
+.sub-btn{
+    font-size: 1rem;
+    padding:0.75rem 2rem;
+    color: var(--white);
+    background-color: var(--primary-color);
+    outline:none;
+    border:1px solid white;
+    border-radius: 2px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.sub-btn:hover{
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+    
 .logo {
   max-width: 150px;
 }
@@ -327,7 +349,8 @@ nav {
 }
 
 .booking__btn {
-  text-align: right;
+    text-align: right;
+    grid-column-start: 3;
 }
 
 .service__grid {

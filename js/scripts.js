@@ -1,6 +1,3 @@
-window.onload = function() {
-    alert("Welcome to Silverline where services is at it peek");
-}
 function openModal(modalId) {
     document.getElementById(modalId).style.display = "block";
 }
@@ -23,9 +20,21 @@ function scrollToSection(sectionId) {
     }
 }
 
+function showDepartureDropdown() {
+    var dropdown = document.getElementById("departure-dropdown");
+    dropdown.classList.toggle("show");
+}
+
 function showArrivalDropdown() {
     var dropdown = document.getElementById("arrival-dropdown");
     dropdown.classList.toggle("show");
+}
+
+function selectDeparture(event, destination) {
+    event.preventDefault();
+    var departureInput = document.getElementById("departure");
+    departureInput.value = destination;
+    closeDropdown('departure-dropdown');
 }
 
 function selectDestination(event, destination) {
@@ -37,13 +46,27 @@ function selectDestination(event, destination) {
 
 function closeDropdown() {
     var dropdown = document.getElementById("arrival-dropdown");
+    if (dropdown) {
     dropdown.classList.remove("show");
+    }
+}
+
+function setFixedTime() {
+    var timeInput = document.getElementById("time");
+    if (timeInput) {
+        timeInput.value = "11:00";
+    } else {
+        console.error("Time input not found!");
+    }
 }
 
 // Close the dropdown menu if the user clicks outside of it
 window.addEventListener("click", function(event) {
     if (!event.target.matches('#arrival') && !event.target.closest('.dropdown')) {
         closeDropdown();
+    }
+    if (!event.target.matches('#departure') && !event.target.closest('.dropdown')) {
+        closeDropdown('departure-dropdown');
     }
 });
 
@@ -150,7 +173,7 @@ window.addEventListener("click", function(event) {
             }
         }
     }
-})
+}
 
 document.getElementById("book-now-button").addEventListener("click", function(event) {
     console.log("Button clicked!");
