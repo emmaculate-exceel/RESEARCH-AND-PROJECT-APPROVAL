@@ -92,13 +92,14 @@
                   </div>
                   <div class="booking__input">
                       <label for="date">Date</label>
-                      <div class="dropdown">
-                          <input type="date" onclick="showDateDropdown()">
-                      </div>
+                      <input type="date" id="date" onchange="setFixedTime()">
                   </div>
+                  <div class="booking__input">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" readonly>
+                </div>
                   <div class="booking__btn">
                       <button id="book-now-button" class="btn">Book Now</button>
-                      </div>
                   </div>
               </form>
           </div>
