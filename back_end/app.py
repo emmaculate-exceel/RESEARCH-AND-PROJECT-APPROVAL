@@ -11,11 +11,11 @@ if __name__ == "__main__":
     if db:
         print("connected!!!")
 
-        cursor = db.cursor()
-        cursor.execute("SHOW DATABASES")
-        database = cursor.fetchall()
-        for rows in database:
-            print(rows)
+    cursor = db.cursor()
+    cursor.execute("SHOW DATABASES")
+    database = cursor.fetchall()
+    for rows in database:
+        print(rows)
     
-        cursor.close()
-        db.close()
+    cursor.close()
+    db.close()
