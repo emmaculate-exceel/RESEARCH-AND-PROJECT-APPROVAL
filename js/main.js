@@ -3,7 +3,7 @@ const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
 var i = 0;
 function sliderImg(){
-    var time = 7000;
+    var time = 10000;
     var images = [
  	"./assets/sl1.jpg",
 	"./assets/sl2.jpg",
