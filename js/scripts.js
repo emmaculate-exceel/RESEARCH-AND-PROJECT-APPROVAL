@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-// function openModal(modalId) {
-//   document.getElementById(modalId).style.display = "block";
-// }
-=======
-
 function openModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
+  document.getElementById(modalId).style.display = "block";
 }
->>>>>>> 2169928ce98fa73cb66798ac54decc0e59f8ef99
 
 function closeModal(modalId) {
   document.getElementById(modalId).style.display = "none";
@@ -85,20 +78,6 @@ function showDateDropdown() {
   dropdown.classList.toggle("show");
 }
 
-// document
-//   .getElementById("book-now-button")
-//   .addEventListener("click", function (event) {
-//     console.log("Button clicked!");
-//     //var paymentSection = document.getElementById("payment-section");
-//     //paymentSection.style.display = "block";
-//     showSignInForm();
-//   });
-
-// function showSignInForm() {
-//   openModal("signInModal");
-// }
-
-// Close the dropdown menu if the user clicks outside of it
 window.addEventListener("click", function (event) {
   if (!event.target.matches(".dropbtn")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -184,17 +163,16 @@ window.addEventListener("click", function (event) {
         openDropdown.classList.remove("show");
       }
     }
-<<<<<<< HEAD
   }
-=======
 });
 
-document.getElementById("book-now-button").addEventListener("click", function(event) {
+document
+  .getElementById("book-now-button")
+  .addEventListener("click", function (event) {
     console.log("Button clicked!");
     var paymentSection = document.getElementById("payment-details");
     paymentSection.style.display = "block";
->>>>>>> 2169928ce98fa73cb66798ac54decc0e59f8ef99
-});
+  });
 
 document
   .getElementById("book-now-button")
@@ -204,10 +182,3 @@ document
     paymentSection.style.display = "block";
     showSignInForm();
   });
-
-// function showSignInForm() {
-//   // Get the sign-in form modal element
-//   var signInFormModal = document.getElementById("signin-form");
-//   // Display the sign-in form modal
-//   signInFormModal.style.display = "block";
-// }

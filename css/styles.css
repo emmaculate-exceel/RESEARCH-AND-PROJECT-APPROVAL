@@ -217,16 +217,13 @@ body {
 
 .header {
   padding-top: 4rem;
-  adding-top: 4rem;
-  background-image: linear-gradient(rgba(1, 24, 11, 0.7), rgba(1, 24, 11, 0.7)),
-    url("../assets/header.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
   /* worked on the opacity  */
   transition: opacity 0.5s ease;
 }
-
+/* end */
 nav {
   position: fixed;
   isolation: isolate;
