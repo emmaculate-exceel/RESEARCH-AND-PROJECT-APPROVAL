@@ -1,110 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel='icon' type='image/x-icon' href='./css/fontawesome-free-5.14.0-web/trainH.svg'/>
+    <link rel='icon' type='image/x-icon' href='./css/fontawesome-free-5.14.0-web/trainH.svg' />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>SilverLine Express</title>
   </head>
-  <body>
-  <header class="header">
- <!-- login form container -->
-    <div class="login-form-container hidden" id="login-form-container">
-      <form action="#">
-        <h3 class="form-title">Login</h3>
-        <input type="text" class="user-name-input" placeholder="Username" required>
-        <input type="password" name="password" class="user-password-input" placeholder="Password" required>
-        <a href="#" class="login-btn">Login</a>
-        <div class="forgotten-box">
-          <p class="forgot-text">Forgot password?</p>
-          <a href="#" class="forgot-link">Reset password</a>
-        </div>
-      </form>
 
-      <div class="overlay hidden" id="overlay">
+  <body>
+    <header class="header" id="header" style="background-image: linear-gradient(rgba(1, 24, 11, 0.7), rgba(1, 24, 11, 0.7)),
+    url('../assets/header.jpg');">
+      <!-- login form container -->
+      <div class="login-form-container hidden" id="login-form-container">
+        <div class="form-box">
+
+          <form action="#" class="form-1 hidden" id="loginForm">
+            <h3 class="form-title">Login</h3>
+            <input type="text" class="user-name-input" placeholder="Username" required />
+            <input type="password" name="password" class="user-password-input" placeholder="Password" required />
+            <a href="#" class="login-btn">Login</a>
+            <div class="forgotten-box">
+              <a href="#" class="forgot-link">Forgot password</a>
+              <a href="#signupForm" class="sign-up" id="showSignupForm">Sign up</a>
+            </div>
+          </form>
+
+          <form action="#" class="form-2" id="signupForm">
+            <h3 class="form-title">Sign up</h3>
+            <input type="text" class="user-name-input" placeholder="First Name" required />
+
+            <input type="text" class="user-name-input" placeholder="Last Name" required />
+
+            <input type="email" class="user-name-input" placeholder="Email" required />
+
+            <input type="password" name="password" class="user-password-input" placeholder="Password" required />
+            <a href="#" class="login-btn">Sign up</a>
+            <div class="forgotten-box">
+              <a href="#" class="sign-up" id="showLoginForm">Login</a>
+            </div>
+          </form>
+        </div>
+        <!-- <div class="overlay hidden" id="overlay">
+      </div> -->
       </div>
-    </div>
-<!-- END -->
+      <!-- END -->
 
       <nav>
-          <div class="nav__bar">
-              <div class="logo">
-                  <a href="#"><img src="./css/fontawesome-free-5.14.0-web/mod1.svg" alt="logo"></a>
-              </div>
-              <div class="nav__menu__btn" id="menu-btn">
-                  <i class="ri-menu-line"></i>
-              </div>
+        <div class="nav__bar">
+          <div class="logo">
+            <a href="#"><img src="./css/fontawesome-free-5.14.0-web/mod1.svg" alt="logo"></a>
           </div>
-          <ul class="nav__links" id="nav-links">
-              <li><a href="#home">Home</a></li>
-              <li><a href="#service">Service</a></li>
-              <li><a href="#offer">Offer</a></li>
-              <li><a href="#client">Client</a></li>
-              <li><button class="btn" id="sign-in">Sign In</button></li>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#offer">Offer</a></li>
+          <li><a href="#client">Client</a></li>
+          <li><button class="btn" id="sign-in">Sign In</button></li>
 
-          </ul>
+        </ul>
       </nav>
       <div class="section__container header__container" id="home">
-          <h1>Connecting Dreams, One Track at a Time</h1>
-          <p>Efficiency and Comfort, Every Stop, Every Service, SilverLine Express!</p>
-          <div class="booking">
-              <div class="booking__type" id="booking-type">
-                  <div class="active">One Way</div>
-                  <div>Round Trip</div>
-              </div>
-              <form action="/" class="booking__form">
-                  <div class="booking__input">
-                      <label for="departure">From</label>
-                      <div class="dropdown">
-                          <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly>
-                          <div class="dropdown-content" id="departure-dropdown">
-                              <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
-                              <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
-                              <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
-                              <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
-                              <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="booking__input">
-                      <label for="arrival">To</label>
-                      <div class="dropdown">
-                          <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly>
-                          <div class="dropdown-content" id="arrival-dropdown">
-                              <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
-                              <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
-                              <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
-                              <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
-                              <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="booking__input">
-                      <label for="date">Date</label>
-                      <input type="date" id="date" onchange="setFixedTime()">
-                  </div>
-                  <div class="booking__input">
-                    <label for="time">Time</label>
-                    <input type="time" id="time" readonly>
-                </div>
-                  <div class="booking__btn">
-                      <button id="book-now-button" class="btn">Book Now</button>
-                  </div>
-              </form>
+        <h1>Connecting Dreams, One Track at a Time</h1>
+        <p>Efficiency and Comfort, Every Stop, Every Service, SilverLine Express!</p>
+        <div class="booking">
+          <div class="booking__type" id="booking-type">
+            <div class="active">One Way</div>
+            <div>Round Trip</div>
           </div>
+          <form action="/" class="booking__form">
+            <div class="booking__input">
+              <label for="departure">From</label>
+              <div class="dropdown">
+                <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly>
+                <div class="dropdown-content" id="departure-dropdown">
+                  <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
+                  <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
+                  <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
+                  <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
+                  <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
+                </div>
+              </div>
+            </div>
+            <div class="booking__input">
+              <label for="arrival">To</label>
+              <div class="dropdown">
+                <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly>
+                <div class="dropdown-content" id="arrival-dropdown">
+                  <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
+                  <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
+                  <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
+                  <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
+                  <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
+                </div>
+              </div>
+            </div>
+            <div class="booking__input">
+              <label for="date">Date</label>
+              <input type="date" id="date" onchange="setFixedTime()">
+            </div>
+            <div class="booking__input">
+              <label for="time">Time</label>
+              <input type="time" id="time" readonly>
+            </div>
+            <div class="booking__btn">
+              <!-- worked on the button name only -->
+              <button id="" class="btn book-now-btn">Book Now</button>
+            </div>
+          </form>
+        </div>
       </div>
-  </header>
+    </header>
 
     <section class="section__container service__container" id="service">
       <h2 class="section__header">Our Services Coming Soon</h2>
@@ -119,7 +134,7 @@
               <h4>Cruise Ticket</h4>
               <p>
                 Explore the seas with ease! Book your next unforgettable cruise
-		adventure effortlessly.
+                adventure effortlessly.
               </p>
             </div>
             <div class="service__btn">
@@ -129,12 +144,12 @@
         </div>
         <div class="service__card">
           <img src="assets/service-2.jpg" alt="service" />
-	  <div>
+          <div>
             <div>
               <h4>Car Booking</h4>
               <p>
                 Your ride, your way. Find and Book the perfect vehicle for your
-		Journey with ease.
+                Journey with ease.
               </p>
             </div>
             <div class="service__btn">
@@ -149,7 +164,7 @@
               <h4>Train Ticket</h4>
               <p>
                 Seamlessly Book your train journey with ease and convenience,
-		ensuring a smooth travel experience.
+                ensuring a smooth travel experience.
               </p>
             </div>
             <div class="service__btn">
@@ -164,7 +179,7 @@
               <h4>Hotel Booking</h4>
               <p>
                 Your Home away from Home. Discover and Book accommodations tailo
-		red to your needs effortlessly.
+                red to your needs effortlessly.
               </p>
             </div>
             <div class="service__btn">
@@ -187,7 +202,7 @@
           <p>12 May 2024</p>
           <div>
             <span>#50,000.00</span>
-            <button class="btn">Book Now</button>
+            <button class="btn book-now-btn">Book Now</button>
           </div>
         </div>
         <div class="offer__card">
@@ -196,7 +211,7 @@
           <p>27 May 2024</p>
           <div>
             <span>#27,000.00</span>
-            <button class="btn">Book Now</button>
+            <button class="btn book-now-btn">Book Now</button>
           </div>
         </div>
         <div class="offer__card">
@@ -205,7 +220,7 @@
           <p>4 June 2024</p>
           <div>
             <span>#70,000.00</span>
-            <button class="btn">Book Now</button>
+            <button class="btn book-now-btn">Book Now</button>
           </div>
         </div>
       </div>
@@ -248,8 +263,8 @@
       <div class="section__container client__container">
         <h2 class="section__header">Words From Our Clients</h2>
         <p class="section__description">
-          Read what our clients have to say about their experience with our 
-	  services.
+          Read what our clients have to say about their experience with our
+          services.
         </p>
         <!-- Slider main container -->
         <div class="swiper">
@@ -259,7 +274,7 @@
             <div class="swiper-slide">
               <div class="client__card">
                 <img src="assets/client-1.jpg" alt="client" />
-		<h4>Awaja Angela</h4>
+                <h4>Awaja Angela</h4>
                 <p>Accountant</p>
                 <div class="client__ratings">
                   <span><i class="ri-star-fill"></i></span>
@@ -269,10 +284,10 @@
                   <span><i class="ri-star-line"></i></span>
                 </div>
                 <p>
-                  Booking my trip was a breeze with this. I got great 
-		  deals on trains, all in one place. The customer 
-		  service was top notch; they were quick to respond to my 
-		  inquiries and made sure i had all the information i needed as.
+                  Booking my trip was a breeze with this. I got great
+                  deals on trains, all in one place. The customer
+                  service was top notch; they were quick to respond to my
+                  inquiries and made sure i had all the information i needed as.
                 </p>
               </div>
             </div>
@@ -290,8 +305,8 @@
                 </div>
                 <p>
                   This platform is a game changer! I was able to easily compare
-		  prices for different transportation options and book my entire
-		  trip in minutes. The interface is indeed user-friendly.
+                  prices for different transportation options and book my entire
+                  trip in minutes. The interface is indeed user-friendly.
                 </p>
               </div>
             </div>
@@ -308,10 +323,10 @@
                   <span><i class="ri-star-line"></i></span>
                 </div>
                 <p>
-                  I love how the website simplifies travel planning. From 
-		  finding the best train deals to booking hotels, it's all so
-		  easy. Highly recommended for anyone looking to travel stress
-		  free!.
+                  I love how the website simplifies travel planning. From
+                  finding the best train deals to booking hotels, it's all so
+                  easy. Highly recommended for anyone looking to travel stress
+                  free!.
                 </p>
               </div>
             </div>
@@ -328,10 +343,10 @@
                   <span><i class="ri-star-line"></i></span>
                 </div>
                 <p>
-                  This website made my last-minute trip planning easy. I was 
-		  able to find affordable transportation option quickly and
-		  easily. I'd definitely be using this website for all my
-		  future travels.
+                  This website made my last-minute trip planning easy. I was
+                  able to find affordable transportation option quickly and
+                  easily. I'd definitely be using this website for all my
+                  future travels.
                 </p>
               </div>
             </div>
@@ -349,8 +364,8 @@
                 </div>
                 <p>
                   With this website, I found a great deal on a train and hotel
-		  package within minutes. The whole process was smooth and I
-		  even got a confirmation email right away and honestly that was so so awesome the, thanks.
+                  package within minutes. The whole process was smooth and I
+                  even got a confirmation email right away and honestly that was so so awesome the, thanks.
                 </p>
               </div>
             </div>
@@ -369,11 +384,12 @@
             Experience seamless travel planning through our comprehensive
             travel platform. Find the best deals on trains, hotels,
             accommodations, and more. Book your next unforgettable adventure
-	    today.
+            today.
           </p>
           <ul class="footer__socials">
             <li>
-              <a href="https://www.facebook.com/profile.php?id=100055148356815" target="_blank"><i class="ri-facebook-fill"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100055148356815" target="_blank"><i
+                  class="ri-facebook-fill"></i></a>
             </li>
             <li>
               <a href="https://www.instagram.com" target="_blank"><i class="ri-instagram-line"></i></a>
@@ -459,38 +475,38 @@
               <button type="submit">Register</button>
           </form>
       </div>-->
-      <div id="confirmationMessage"></div>
-  </div>
+    <div id="confirmationMessage"></div>
+    </div>
 
-  <script>
+    <script>
       function registerUser(event) {
-          event.preventDefault();
-          // Perform validation and registration process
-          // For demonstration, assume registration is successful
-          displayConfirmationMessage();
+        event.preventDefault();
+        // Perform validation and registration process
+        // For demonstration, assume registration is successful
+        displayConfirmationMessage();
       }
 
       function displayConfirmationMessage() {
-          const confirmationMessage = document.getElementById('confirmationMessage');
-          confirmationMessage.innerHTML = 'Account created successfully! Please check your email for confirmation.';
+        const confirmationMessage = document.getElementById('confirmationMessage');
+        confirmationMessage.innerHTML = 'Account created successfully! Please check your email for confirmation.';
       }
 
       document.getElementById('registrationForm').addEventListener('submit', registerUser);
-  </script>
+    </script>
+    <!-- commented some code out of here  -->
+    <script>
+      // JavaScript code
+      // Add an event listener to the "Book Now" button
+      document.getElementById("book-now-button").addEventListener("click", function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        // Toggle the display of the payment section
+        //document.getElementById("payment-section").style.display = "block";
+      });
+    </script>
 
-<script>
-  // JavaScript code
-  // Add an event listener to the "Book Now" button
-  document.getElementById("book-now-button").addEventListener("click", function(event) {
-    // Prevent the default form submission behavior
-    event.preventDefault();
-    // Toggle the display of the payment section
-    document.getElementById("payment-section").style.display = "block";
-  });
-</script>
-
-<script src="./js/toggle.js"></script>
+    <script src="./js/toggle.js"></script>
   </body>
-    
+
 
 </html>

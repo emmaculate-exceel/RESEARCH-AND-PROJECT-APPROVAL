@@ -33,29 +33,26 @@
 }
 
 /* CSS */
+.form-box {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-.hidden {
-  display: none;
+  background-color: #fff;
+  width: 40%;
+  z-index: 20;
+  padding: 2rem 0;
 }
 
 .login-form-container form {
-  width: 40%;
+  width: 100%;
   height: auto;
-  background-color: #fff;
-  /* padding-top: 1rem; */
-  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-
-  position: fixed;
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-
-  z-index: 100;
 }
 
 .close-login {
@@ -101,9 +98,11 @@
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   z-index: 5;
@@ -111,6 +110,21 @@
   backdrop-filter: blur(3px);
 }
 
+.hidden {
+  display: none !important;
+}
+.login-form-container {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
 /* END */
 
 .section__container {
@@ -203,11 +217,11 @@ body {
 
 .header {
   padding-top: 4rem;
-  background-image: linear-gradient(rgba(1, 24, 11, 0.7), rgba(1, 24, 11, 0.7)),
-    url("../assets/header.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  /* worked on the opacity  */
+  transition: opacity 0.5s ease;
 }
 
 nav {
@@ -600,7 +614,7 @@ nav {
 }
 
 .footer__links li a:hover {
-  color: var(--primary-color);
+  color: var(--text-dark);
 }
 
 .footer__links li span {
@@ -638,8 +652,8 @@ nav {
 }
 
 @media (max-width: 705px) {
-  .login-form-container form {
-    width: 85%;
+  .form-box {
+    width: 92%;
   }
 }
 
