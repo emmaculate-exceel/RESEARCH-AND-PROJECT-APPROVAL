@@ -1,6 +1,30 @@
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
 const menuBtnIcon = menuBtn.querySelector("i");
+var i = 0;
+function sliderImg(){
+    var time = 7000;
+    var images = [
+ 	"./assets/sl1.jpg",
+	"./assets/sl2.jpg",
+	"./assets/sl3.avif",
+	"./assets/sl4.jpg",
+        "./assets/sl5.jpg",
+        "./assets/sl6.jpg",
+        "./assets/sl7.jpg"];
+    var h = document.getElementsByClassName("header");
+    if (h.length > 0){
+	
+	h[0].style.backgroundImage = "linear-gradient(rgba(1, 24, 11, 0.7), rgba(1, 24, 11, 0.7)), url('" + images[i] + "')";
+	i++;
+	if (i >= images.length){
+	    i = 0;
+	}
+    }
+
+    setTimeout(sliderImg, time);
+}
+window.onload = sliderImg;
 
 menuBtn.addEventListener("click", (e) => {
   navLinks.classList.toggle("open");
