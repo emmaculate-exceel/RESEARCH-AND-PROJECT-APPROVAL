@@ -90,17 +90,12 @@ window.addEventListener("click", function (event) {
   }
 });
 
-document
-  .getElementById("payment-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the form from submitting
-
-    // Here you can add your logic to process the payment details
-    // For example, you can send the data to a server using AJAX
-
-    // After processing, you can show a success message or redirect the user to a thank you page
-    alert("Payment submitted successfully!");
-  });
+// document
+//   .getElementById("payment-form")
+//   // .addEventListener("submit", function (event) {
+//   //   event.preventDefault();
+//     alert("Payment submitted successfully!");
+//   });
 
 // scripts.js
 
@@ -166,19 +161,19 @@ window.addEventListener("click", function (event) {
   }
 });
 
-document
-  .getElementById("book-now-button")
-  .addEventListener("click", function (event) {
-    console.log("Button clicked!");
-    var paymentSection = document.getElementById("payment-details");
-    paymentSection.style.display = "block";
-  });
+// document
+//   .getElementById("book-now-button")
+//   .addEventListener("click", function (event) {
+//     console.log("Button clicked!");
+//     var paymentSection = document.getElementById("payment-details");
+//     paymentSection.style.display = "block";
+//   });
 
-document
-  .getElementById("book-now-button")
-  .addEventListener("click", function (event) {
-    // console.log("Button clicked!");
-    var paymentSection = document.getElementById("payment-details");
-    paymentSection.style.display = "block";
-    showSignInForm();
-  });
+// document
+//   .getElementById("book-now-button")
+//   .addEventListener("click", function (event) {
+//     // console.log("Button clicked!");
+//     var paymentSection = document.getElementById("payment-details");
+//     paymentSection.style.display = "block";
+//     showSignInForm();
+//   });
