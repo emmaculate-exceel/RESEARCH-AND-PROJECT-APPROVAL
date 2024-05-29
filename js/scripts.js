@@ -19,103 +19,44 @@ function scrollToSection(sectionId) {
     section.scrollIntoView({ behavior: "smooth" });
   }
 }
+//the new changes for arrival and departure
+function showOneWay() {
+  document.getElementById("one-way-form").style.display = "block";
+  document.getElementById("round-trip-form").style.display = "none";
+  document.getElementById("one-way-btn").classList.add("active");
+  document.getElementById("round-trip-btn").classList.remove("active");
+}
 
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('Document is ready');
-
-    const oneWayBtn = document.getElementById('one-way-btn');
-    const roundTripBtn = document.getElementById('round-trip-btn');
-    const returnDateContainer = document.getElementById('return-date-container');
-
-    // Initially hide the return date input
-    returnDateInput.parentElement.style.display = 'none';
-
-    oneWayBtn.addEventListener('click', function () {
-        console.log('One Way clicked');
-        oneWayBtn.classList.add('active');
-        roundTripBtn.classList.remove('active');
-        returnDateContainer.style.display = 'none';
-    });
-
-    roundTripBtn.addEventListener('click', function () {
-        console.log('Round Trip clicked');
-        roundTripBtn.classList.add('active');
-        oneWayBtn.classList.remove('active');
-        returnDateContainer.style.display = 'block';
-    });
-});
+function showRoundTrip() {
+  document.getElementById("one-way-form").style.display = "none";
+  document.getElementById("round-trip-form").style.display = "block";
+  document.getElementById("one-way-btn").classList.remove("active");
+  document.getElementById("round-trip-btn").classList.add("active");
+}
 
 function showDepartureDropdown() {
-  var dropdown = document.getElementById("departure-dropdown");
-  dropdown.classList.toggle("show");
+  document.getElementById("departure-dropdown").classList.toggle("show");
 }
 
 function showArrivalDropdown() {
-  var dropdown = document.getElementById("arrival-dropdown");
-  dropdown.classList.toggle("show");
-}
-
-function selectDeparture(event, destination) {
-  event.preventDefault();
-  var departureInput = document.getElementById("departure");
-  departureInput.value = destination;
-  closeDropdown("departure-dropdown");
+  document.getElementById("arrival-dropdown").classList.toggle("show");
 }
 
 function selectDestination(event, destination) {
-  event.preventDefault(); // Prevent the default action of the anchor tag
-  var arrivalInput = document.getElementById("arrival");
-  arrivalInput.value = destination;
-  closeDropdown();
-}
-
-function closeDropdown() {
-  var dropdown = document.getElementById("arrival-dropdown");
-  if (dropdown) {
+  event.preventDefault();
+  event.target.closest(".dropdown").querySelector("input").value = destination;
+  document.querySelectorAll(".dropdown-content").forEach(function (dropdown) {
     dropdown.classList.remove("show");
-  }
+  });
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const dateInput = document.getElementById('date');
-    const timeInput = document.getElementById('time');
-
-    function setFixedTime() {
-        const selectedDate = new Date(dateInput.value);
-        if (!isNaN(selectedDate)) {
-            // Example logic: set the time to 10:00 AM
-            const fixedTime = "10:00";
-            timeInput.value = fixedTime;
-        } else {
-            // Handle the case where the selected date is invalid or cleared
-            timeInput.value = "";
-        }
-    }
-
-    dateInput.addEventListener('change', setFixedTime);
-});
-
-
-// Close the dropdown menu if the user clicks outside of it
-window.addEventListener("click", function (event) {
-  if (!event.target.matches("#arrival") && !event.target.closest(".dropdown")) {
-    closeDropdown();
-  }
-  if (
-    !event.target.matches("#departure") &&
-    !event.target.closest(".dropdown")
-  ) {
-    closeDropdown("departure-dropdown");
-  }
-});
-
-function showDateDropdown() {
-  var dropdown = document.getElementById("date-dropdown");
-  dropdown.classList.toggle("show");
+function setFixedTime() {
+  document.getElementById("time").value = "12:00";
 }
 
-window.addEventListener("click", function (event) {
-  if (!event.target.matches(".dropbtn")) {
+// close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropdown input")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     for (var i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
@@ -124,7 +65,117 @@ window.addEventListener("click", function (event) {
       }
     }
   }
-});
+};
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     console.log('Document is ready');
+
+//     const oneWayBtn = document.getElementById('one-way-btn');
+//     const roundTripBtn = document.getElementById('round-trip-btn');
+//     const returnDateContainer = document.getElementById('return-date-container');
+
+//     // Initially hide the return date input
+//     returnDateInput.parentElement.style.display = 'none';
+
+//     oneWayBtn.addEventListener('click', function () {
+//         console.log('One Way clicked');
+//         oneWayBtn.classList.add('active');
+//         roundTripBtn.classList.remove('active');
+//         returnDateContainer.style.display = 'none';
+//     });
+
+//     roundTripBtn.addEventListener('click', function () {
+//         console.log('Round Trip clicked');
+//         roundTripBtn.classList.add('active');
+//         oneWayBtn.classList.remove('active');
+//         returnDateContainer.style.display = 'block';
+//     });
+// });
+
+// function showDepartureDropdown() {
+//   var dropdown = document.getElementById("departure-dropdown");
+//   dropdown.classList.toggle("show");
+// }
+
+// function showArrivalDropdown() {
+//   var dropdown = document.getElementById("arrival-dropdown");
+//   dropdown.classList.toggle("show");
+// }
+
+// function selectDeparture(event, destination) {
+//   event.preventDefault();
+//   var departureInput = document.getElementById("departure");
+//   departureInput.value = destination;
+//   closeDropdown("departure-dropdown");
+// }
+
+// function selectDestination(event, destination) {
+//   event.preventDefault(); // Prevent the default action of the anchor tag
+//   var arrivalInput = document.getElementById("arrival");
+//   arrivalInput.value = destination;
+//   closeDropdown();
+// }
+
+// function closeDropdown() {
+//   var dropdown = document.getElementById("arrival-dropdown");
+//   if (dropdown) {
+//     dropdown.classList.remove("show");
+//   }
+// }
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const dateInput = document.getElementById('date');
+//     const timeInput = document.getElementById('time');
+
+//     function setFixedTime() {
+//         const selectedDate = new Date(dateInput.value);
+//         if (!isNaN(selectedDate)) {
+//             // Example logic: set the time to 10:00 AM
+//             const fixedTime = "10:00";
+//             timeInput.value = fixedTime;
+//         } else {
+//             // Handle the case where the selected date is invalid or cleared
+//             timeInput.value = "";
+//         }
+//     }
+
+//     dateInput.addEventListener('change', setFixedTime);
+// });
+
+
+// // Close the dropdown menu if the user clicks outside of it
+// window.addEventListener("click", function (event) {
+//   if (!event.target.matches("#arrival") && !event.target.closest(".dropdown")) {
+//     closeDropdown();
+//   }
+//   if (
+//     !event.target.matches("#departure") &&
+//     !event.target.closest(".dropdown")
+//   ) {
+//     closeDropdown("departure-dropdown");
+//   }
+// });
+
+// function showDateDropdown() {
+//   var dropdown = document.getElementById("date-dropdown");
+//   dropdown.classList.toggle("show");
+// }
+
+// window.addEventListener("click", function (event) {
+//   if (!event.target.matches(".dropbtn")) {
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     for (var i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains("show")) {
+//         openDropdown.classList.remove("show");
+//       }
+//     }
+//   }
+// });
 
 // document
 //   .getElementById("payment-form")

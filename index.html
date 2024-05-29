@@ -78,14 +78,14 @@
         <p>Efficiency and Comfort, Every Stop, Every Service, SilverLine Express!</p>
         <div class="booking">
           <div class="booking__type" id="booking-type">
-            <div id="one-way-btn" class="active">One Way</div>
-            <div id="round-trip-btn">Round Trip</div>
+            <div id="one-way-btn" class="active" onclick="showOneWay()">One Way</div>
+            <div id="round-trip-btn" onclick="showRoundTrip()">Round Trip</div>
           </div>
-              <form action="/" class="booking__form">
+              <form action="/" class="booking__form" id="one-way-form">
                   <div class="booking__input">
                       <label for="departure">From</label>
                       <div class="dropdown">
-                          <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly>
+                          <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly/>
                           <div class="dropdown-content" id="departure-dropdown">
                               <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
                               <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
@@ -98,7 +98,7 @@
                   <div class="booking__input">
                       <label for="arrival">To</label>
                       <div class="dropdown">
-                          <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly>
+                          <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly/>
                           <div class="dropdown-content" id="arrival-dropdown">
                               <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
                               <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
@@ -110,18 +110,62 @@
                   </div>
                   <div class="booking__input">
                       <label for="date">Date</label>
-                      <input type="date" id="date" onchange="setFixedTime()">
+                      <input type="date" id="date" onchange="setFixedTime()" />
                   </div>
                   <div class="booking__input">
                     <label for="time">Time</label>
-                    <input type="time" id="time" readonly>
+                    <input type="time" id="time" readonly />
                 </div>
                   <div class="booking__btn">
                       <button id="" class="btn book-now-btn">Book Now</button>
                   </div>
               </form>
+
+              <form action="/" class="booking__form" id="round-trip-form" style="display: none">
+                <div class="booking__input">
+                  <label for="departure">From</label>
+                  <div class="dropdown">
+                    <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly/>
+                    <div class="dropdown-content" id="departure-dropdown">
+                      <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
+                      <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
+                      <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
+                      <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
+                      <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking__input">
+                  <label for="arrival">To</label>
+                  <div class="dropdown">
+                    <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly/>
+                    <div class="dropdown-content" id="arrival-dropdown">
+                      <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
+                      <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
+                      <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
+                      <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
+                      <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="booking__input">
+                  <label for="departure-date">Departure Date</label>
+                  <input type="date" id="departure-date" onchange="setFixedTime()" />
+                </div>
+                <div class="booking__input">
+                  <label for="return-date">Return Date</label>
+                  <input type="date" id="return-date" onchange="setFixedTime()" />
+                </div>
+                <div class="booking__input">
+                  <label for="time">Time</label>
+                  <input type="time" id="time" readonly />
+                </div>
+                <div class ="booking__btn">
+                  <button id="" class="btn book-now-btn">Book Now</button>
+                </div>
+              </form>
+            </div>
           </div>
-      </div>
     </header>
 
     <section class="section__container service__container" id="service">
@@ -461,7 +505,10 @@
           </ul>
         </div>
         <div class="footer__col">
-          <h4>Subscribe</h4>
+          <h4>Newsletter</h4>
+          <p class="section__description">
+            Subscribe to our newsletter to receive the latest news and exclusive offers every week. No spam.
+          </p>
           <form action="">
             <input type="text" placeholder="Enter your email" />
             <button class="sub-btn">Subscribe</button>

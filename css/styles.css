@@ -336,7 +336,7 @@ nav {
   align-items: center;
   gap: 1rem;
   background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .booking__input {
@@ -352,8 +352,8 @@ nav {
 
 .booking__input input {
   width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
+  padding: 0.5rem; /* reduced */
+  font-size: 1rem; /* reduced */
   color: var(--text-dark);
   outline: none;
   border: 1px solid var(--extra-light);
@@ -362,7 +362,7 @@ nav {
 
 .booking__btn {
   text-align: right;
-  grid-column-start: 3;
+  grid-column-start: 1;
 }
 
 .service__grid {
@@ -727,8 +727,10 @@ nav {
   }
 
   .booking__form {
-    padding: 1.5rem;
+    padding: 3rem;
     grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; /* Adjust gap between input fields */
+    margin: right; /* Center the form horizontally */
   }
 
   .service__grid {
