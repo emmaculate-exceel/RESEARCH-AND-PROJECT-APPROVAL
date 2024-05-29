@@ -20,6 +20,31 @@ function scrollToSection(sectionId) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('Document is ready');
+
+    const oneWayBtn = document.getElementById('one-way-btn');
+    const roundTripBtn = document.getElementById('round-trip-btn');
+    const returnDateContainer = document.getElementById('return-date-container');
+
+    // Initially hide the return date input
+    returnDateInput.parentElement.style.display = 'none';
+
+    oneWayBtn.addEventListener('click', function () {
+        console.log('One Way clicked');
+        oneWayBtn.classList.add('active');
+        roundTripBtn.classList.remove('active');
+        returnDateContainer.style.display = 'none';
+    });
+
+    roundTripBtn.addEventListener('click', function () {
+        console.log('Round Trip clicked');
+        roundTripBtn.classList.add('active');
+        oneWayBtn.classList.remove('active');
+        returnDateContainer.style.display = 'block';
+    });
+});
+
 function showDepartureDropdown() {
   var dropdown = document.getElementById("departure-dropdown");
   dropdown.classList.toggle("show");
@@ -51,14 +76,25 @@ function closeDropdown() {
   }
 }
 
-function setFixedTime() {
-  var timeInput = document.getElementById("time");
-  if (timeInput) {
-    timeInput.value = "11:00";
-  } else {
-    console.error("Time input not found!");
-  }
-}
+document.addEventListener('DOMContentLoaded', function () {
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+
+    function setFixedTime() {
+        const selectedDate = new Date(dateInput.value);
+        if (!isNaN(selectedDate)) {
+            // Example logic: set the time to 10:00 AM
+            const fixedTime = "10:00";
+            timeInput.value = fixedTime;
+        } else {
+            // Handle the case where the selected date is invalid or cleared
+            timeInput.value = "";
+        }
+    }
+
+    dateInput.addEventListener('change', setFixedTime);
+});
+
 
 // Close the dropdown menu if the user clicks outside of it
 window.addEventListener("click", function (event) {

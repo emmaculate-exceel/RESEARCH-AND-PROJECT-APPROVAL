@@ -864,4 +864,21 @@ nav {
 .payment-form button:hover {
   background-color: #044d35;
 }
+
+.booking__type div {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: none;
+}
+
+.booking__type .active {
+  background-color: #3f9045;
+  color: white;
+}
+
 /* TTEMPORARY */
