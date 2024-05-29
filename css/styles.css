@@ -457,6 +457,11 @@ nav {
   color: var(--text-dark);
 }
 
+.offer__card .price {
+  font-size: 1rem; /* Adjust this value to reduce the font size */
+  color: #333;
+}
+
 .offer__card p {
   margin-bottom: 1rem;
   color: var(--text-light);
@@ -865,25 +870,6 @@ nav {
   background-color: #044d35;
 }
 
-<<<<<<< HEAD
-.booking__type div {
-  cursor: pointer;
-  display: inline-block;
-  padding: 10px;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px;
-  border: none;
-}
-
-.booking__type .active {
-  background-color: #3f9045;
-  color: white;
-}
-
-/* TTEMPORARY */
-=======
 /* Styles for the modal */
 .moda {
   display: none;
@@ -925,4 +911,3 @@ nav {
   text-decoration: none;
   cursor: pointer;
 }
->>>>>>> 5e4e4befa1c1cac024369a28d8064e3998d96a8c
