@@ -43,48 +43,73 @@ function showArrivalDropdown() {
 }
 
 function setFixedTime() {
-  document.getElementById("time").value = "12:00";
+  document.querySelectorAll('input[type="time"]').forEach(input => {
+    input.value = "12:00";
+  });
 }
 
+function selectDestination(event, inputId) {
+  event.preventDefault();
+  document.getElementById(inputId).value = event.target.textContent;
+  document.getElementById(inputId + '-dropdown').classList.remove("show");
+}
+  
+
 document.addEventListener('DOMContentLoaded', function() {
-  const departureInput = document.getElementById('departure');
-  const arrivalInput = document.getElementById('arrival');
-  const departureDropdown = document.getElementById('departureDropdown');
-  const arrivalDropdown = document.getElementById('arrivalDropdown');
+  document.querySelectorAll('.dropdown input').forEach(input => {
+    input.addEventListener('focus', function() {
+      document.getElementById(input.id + '-dropdown').classList.add('show');
+    });
 
-  // Event listeners for the departure input
-  departureInput.addEventListener('focus', function() {
-      departureDropdown.style.display = 'block';
-  });
-
-  departureInput.addEventListener('blur', function() {
+    input.addEventListener('blur', function() {
       setTimeout(() => {
-          departureDropdown.style.display = 'none';
-      }, 200); // Add a slight delay to allow click event to register
+        document.getElementById(input.id + '-dropdown').classList.remove('show');
+      }, 200);
+    });
   });
 
-  departureDropdown.addEventListener('click', function(event) {
-      if (event.target.classList.contains('dropdown-item')) {
-          departureInput.value = event.target.textContent;
+  document.querySelectorAll('.dropdown-content a').forEach(link => {
+    link.addEventListener('click', function(event) {
+      const inputId = event.target.closest('.dropdown-content').id.replace('-dropdown', '');
+      selectDestination(event, inputId);
+    });
+  });
+});
+
+window.addEventListener("click", function (event) {
+  if (!event.target.matches(".dropdown a")) {
+    document.querySelectorAll(".dropdown-content").forEach(dropdown => {
+      if (dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
       }
-  });
+    });
+  }
+});
 
-  // Event listeners for the arrival input
-  arrivalInput.addEventListener('focus', function() {
-      arrivalDropdown.style.display = 'block';
-  });
 
-  arrivalInput.addEventListener('blur', function() {
-      setTimeout(() => {
-          arrivalDropdown.style.display = 'none';
-      }, 200); // Add a slight delay to allow click event to register
-  });
 
-  arrivalDropdown.addEventListener('click', function(event) {
-      if (event.target.classList.contains('dropdown-item')) {
-          arrivalInput.value = event.target.textContent;
-      }
-  });
+// subscribe section
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+document.querySelector(".sub-btn").addEventListener("click", function () {
+  modal.style.display = "block";
+});
+
+// When the user clicks on <span> (x), close the modal
+span.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.addEventListener("click", function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 });
 
 
@@ -255,17 +280,17 @@ function scrollToSection(sectionId) {
 }
 
 // Close the dropdown menu if the user clicks outside of it
-window.addEventListener("click", function (event) {
-  if (!event.target.matches(".dropbtn")) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    }
-  }
-});
+//window.addEventListener("click", function (event) {
+  //if (!event.target.matches(".dropbtn")) {
+   // var dropdowns = document.getElementsByClassName("dropdown-content");
+    //for (var i = 0; i < dropdowns.length; i++) {
+      //var openDropdown = dropdowns[i];
+      //if (openDropdown.classList.contains("show")) {
+        //openDropdown.classList.remove("show");
+     // }
+   // }
+ // }
+//});
 
 // document
 //   .getElementById("book-now-button")

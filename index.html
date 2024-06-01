@@ -510,9 +510,9 @@
           <p class="section__description">
             Subscribe to our newsletter to receive the latest news and exclusive offers every week. No spam.
           </p>
-          <form action="">
-            <input type="text" placeholder="Enter your email" />
-            <button class="sub-btn">Subscribe</button>
+          <form id="SubscribeForm">
+            <input type="email" placeholder="Enter your email" />
+            <button type="button" class="sub-btn">Subscribe</button>
           </form>
         </div>
       </div>
@@ -520,6 +520,16 @@
         Copyright © 2023 Silverline Web Designs. All rights reserved.
       </div>
     </footer>
+
+
+    <!-- Modal for subscription confirmation -->
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h4>Thank you for subscribing to SilverLine Express!</h4>
+      <p>We are thrilled to welcome you to our community. We look forward to keeping you updated with our latest news and exclusive offers!</p>
+    </div>
+  </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
