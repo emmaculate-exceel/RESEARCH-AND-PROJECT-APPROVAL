@@ -42,31 +42,50 @@ function showArrivalDropdown() {
   document.getElementById("arrival-dropdown").classList.toggle("show");
 }
 
-function selectDestination(event, destination) {
-  event.preventDefault();
-  event.target.closest(".dropdown").querySelector("input").value = destination;
-  document.querySelectorAll(".dropdown-content").forEach(function (dropdown) {
-    dropdown.classList.remove("show");
-  });
-}
-
 function setFixedTime() {
   document.getElementById("time").value = "12:00";
 }
 
-// close the dropdown if the user clicks outside of it
-window.onclick = function (event) {
-  if (!event.target.matches(".dropdown input")) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    for (var i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains("show")) {
-        openDropdown.classList.remove("show");
-      }
-    }
-  }
-};
+document.addEventListener('DOMContentLoaded', function() {
+  const departureInput = document.getElementById('departure');
+  const arrivalInput = document.getElementById('arrival');
+  const departureDropdown = document.getElementById('departureDropdown');
+  const arrivalDropdown = document.getElementById('arrivalDropdown');
 
+  // Event listeners for the departure input
+  departureInput.addEventListener('focus', function() {
+      departureDropdown.style.display = 'block';
+  });
+
+  departureInput.addEventListener('blur', function() {
+      setTimeout(() => {
+          departureDropdown.style.display = 'none';
+      }, 200); // Add a slight delay to allow click event to register
+  });
+
+  departureDropdown.addEventListener('click', function(event) {
+      if (event.target.classList.contains('dropdown-item')) {
+          departureInput.value = event.target.textContent;
+      }
+  });
+
+  // Event listeners for the arrival input
+  arrivalInput.addEventListener('focus', function() {
+      arrivalDropdown.style.display = 'block';
+  });
+
+  arrivalInput.addEventListener('blur', function() {
+      setTimeout(() => {
+          arrivalDropdown.style.display = 'none';
+      }, 200); // Add a slight delay to allow click event to register
+  });
+
+  arrivalDropdown.addEventListener('click', function(event) {
+      if (event.target.classList.contains('dropdown-item')) {
+          arrivalInput.value = event.target.textContent;
+      }
+  });
+});
 
 
 
