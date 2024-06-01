@@ -298,13 +298,14 @@ nav {
 }
 
 .booking {
-  max-width: 400px;
-  margin: auto;
-  padding: 1.5rem 1rem;
+  max-width: 80px;
+  margin: 0 auto;
+  padding: 20px;
   display: grid;
   gap: 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 2px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .booking__type {
@@ -333,15 +334,18 @@ nav {
 .booking__form {
   padding: 1.5rem 1rem;
   display: grid;
-  align-items: center;
+  align-items: grid;
   gap: 1rem;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 3px;
 }
 
 .booking__input {
-  display: grid;
+  display: inline-flex;
   gap: 5px;
+  margin-right: 20px;
+  margin-bottom: 35px;
+  border-radius: 3px;
 }
 
 .booking__input label {
@@ -352,12 +356,23 @@ nav {
 
 .booking__input input {
   width: 100%;
-  padding: 0.5rem; /* reduced */
+  padding: 10px; /* reduced */
   font-size: 1rem; /* reduced */
   color: var(--text-dark);
   outline: none;
   border: 1px solid var(--extra-light);
-  border-radius: 2px;
+  border-radius: 3px;
+}
+
+.tickettype {
+  display: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.tickettype input[type="date"],
+.tickettype input[type="time"] {
+  padding: 3px;
 }
 
 .booking__btn {
@@ -727,14 +742,14 @@ nav {
   }
 
   .booking__form {
-    padding: 3rem;
+    padding: 1rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem; /* Adjust gap between input fields */
-    margin: right; /* Center the form horizontally */
+    margin: center; 
   }
 
   .service__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .offer__grid {
@@ -913,3 +928,4 @@ nav {
   text-decoration: none;
   cursor: pointer;
 }
+
