@@ -51,9 +51,13 @@ class SILVERLINE_USERS(Base):
     PASSWORD_HASH = generate_password_hash(Column(String(255), nullable=False))
     PHONE = Column(String(15), nullable=False)
 
-    
+Base.metadata.create_all(engine)
 # get user details and user_requests details for the creating of datas
-@app.route('/login', method=['POST'])
+@app.route("/")
+def form():
+    return render_template("form.html")
+
+@app.route('/login', methods=['POST'])
 # automating users data's for the database """ 
 def add_user():
     user_name = request.form["user_name"]
@@ -69,14 +73,19 @@ def add_user():
     request_email = request.form["request_email"]
     request_phone = request.form["request_phone"]
     request_departure = request.form["request_departure"]
-    request_departure = request.form["request_arrival"]
+    request_arrival = request.form["request_arrival"]
 
-    new_user = SILVERLINE_USERS(NAME=user_name, LASTNAME=user_lastname, EMAIL=user_email, PASSWORD_HASH=user_password, PHONE=user_phone)
-    new_request = SILVERLINE_REQUESTS(NAME=request_name, LASTNAME=request_lastname, EMAIL=request_email, PHONE=request_phone, DEPARTURE=request_departure, ARRIVAL=request_arrival)
+    session = Session()
+    try:
+        new_user = SILVERLINE_USERS(NAME=user_name, LASTNAME=user_lastname, EMAIL=user_email, PASSWORD_HASH=user_password, PHONE=user_phone)
+        new_request = SILVERLINE_REQUESTS(NAME=request_name, LASTNAME=request_lastname, EMAIL=request_email, PHONE=request_phone, DEPARTURE=request_departure, ARRIVAL=request_arrival)
     
-session.add(new_request)
-session.add(new_user)
-
-session.commit()
-session.close()
-Base.metadata.create_all(engine)
+        session.add(new_request)
+        session.add(new_user)
+        session.commit()
+    except Exception as e:
+        session.rollback()
+        return(e)
+    finally:
+        session.close()
+    return "Added Sucessfully"
