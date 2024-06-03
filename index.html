@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/styles1.css" />
     <link rel='icon' type='image/x-icon' href='./css/fontawesome-free-5.14.0-web/trainH.svg' />
     <link rel='icon' type='image/x-icon' href='./css/trainH.svg'/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <title>SilverLine Express</title>
   </head>
@@ -83,28 +84,28 @@
           </div>
               <form action="/" class="booking__form" id="one-way-form">
                   <div class="booking__input">
-                      <label for="departure">From</label>
+                      <label for="one-way-departure">From</label>
                       <div class="dropdown">
-                          <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly/>
-                          <div class="dropdown-content" id="departure-dropdown">
-                              <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
-                              <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
-                              <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
-                              <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
-                              <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
+                          <input type="text" id="one-way-departure" placeholder="Departure" onclick="showDepartureDropdown('departure-dropdown-one-way')" readonly/>
+                          <div class="dropdown-content" id="one-way-departure-dropdown">
+                              <a href="#" onclick="selectDestination(event, 'Lagos', 'one-way-departure')">Lagos</a>
+                              <a href="#" onclick="selectDestination(event, 'Abuja', 'one-way-departure')">Abuja</a>
+                              <a href="#" onclick="selectDestination(event, 'Ibadan', 'one-way-departure')">Ibadan</a>
+                              <a href="#" onclick="selectDestination(event, 'Owerri', 'one-way-departure')">Owerri</a>
+                              <a href="#" onclick="selectDestination(event, 'Kaduna', 'one-way-departure')">Kaduna</a>
                           </div>
                       </div>
                   </div>
                   <div class="booking__input">
-                      <label for="arrival">To</label>
+                      <label for="one-way-arrival">To</label>
                       <div class="dropdown">
-                          <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly/>
-                          <div class="dropdown-content" id="arrival-dropdown">
-                              <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
-                              <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
-                              <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
-                              <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
-                              <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
+                          <input type="text" id="one-way-arrival" placeholder="Arrival" onclick="showArrivalDropdown('arrival-dropdown-one-way')" readonly/>
+                          <div class="dropdown-content" id="arrival-dropdown-one-way">
+                              <a href="#" onclick="selectDestination(event, 'Lagos', 'one-way-arrival')">Lagos</a>
+                              <a href="#" onclick="selectDestination(event, 'Abuja', 'one-way-arrival')">Abuja</a>
+                              <a href="#" onclick="selectDestination(event, 'Ibadan', 'one-way-arrival')">Ibadan</a>
+                              <a href="#" onclick="selectDestination(event, 'Owerri', 'one-way-arrival')">Owerri</a>
+                              <a href="#" onclick="selectDestination(event, 'Kaduna', 'one-way-arrival')">Kaduna</a>
                           </div>
                       </div>
                   </div>
@@ -117,7 +118,7 @@
                     <input type="time" id="time" readonly />
                 </div>
                   <div class="booking__btn">
-                      <button id="" class="btn book-now-btn">Book Now</button>
+                      <button id="" class="btn book-now-btn"><i class="fas fa-search"></i> Search Trains</button>
                   </div>
               </form>
 
@@ -125,26 +126,26 @@
                 <div class="booking__input">
                   <label for="departure">From</label>
                   <div class="dropdown">
-                    <input type="text" placeholder="Departure" onclick="showDepartureDropdown()" readonly/>
-                    <div class="dropdown-content" id="departure-dropdown">
-                      <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
-                      <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
-                      <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
-                      <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
-                      <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
+                    <input type="text" id="departure" placeholder="Departure" onclick="showDepartureDropdown('departure-dropdown-round-trip')" readonly/>
+                    <div class="dropdown-content" id="departure-dropdown-round-trip">
+                      <a href="#" onclick="selectDestination(event, 'Lagos', 'departure')">Lagos</a>
+                      <a href="#" onclick="selectDestination(event, 'Abuja', 'departure')">Abuja</a>
+                      <a href="#" onclick="selectDestination(event, 'Ibadan', 'departure')">Ibadan</a>
+                      <a href="#" onclick="selectDestination(event, 'Owerri', 'departure')">Owerri</a>
+                      <a href="#" onclick="selectDestination(event, 'Kaduna', 'departure')">Kaduna</a>
                     </div>
                   </div>
                 </div>
                 <div class="booking__input">
                   <label for="arrival">To</label>
                   <div class="dropdown">
-                    <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown()" readonly/>
-                    <div class="dropdown-content" id="arrival-dropdown">
-                      <a href="#" onclick="selectDestination(event, 'Lagos')">Lagos</a>
-                      <a href="#" onclick="selectDestination(event, 'Abuja')">Abuja</a>
-                      <a href="#" onclick="selectDestination(event, 'Ibadan')">Ibadan</a>
-                      <a href="#" onclick="selectDestination(event, 'Owerri')">Owerri</a>
-                      <a href="#" onclick="selectDestination(event, 'Kaduna')">Kaduna</a>
+                    <input type="text" id="arrival" placeholder="Arrival" onclick="showArrivalDropdown('arrival-dropdown-round-trip')" readonly/>
+                    <div class="dropdown-content" id="arrival-dropdown-round-trip">
+                      <a href="#" onclick="selectDestination(event, 'Lagos', 'arrival')">Lagos</a>
+                      <a href="#" onclick="selectDestination(event, 'Abuja', 'arrival')">Abuja</a>
+                      <a href="#" onclick="selectDestination(event, 'Ibadan', 'arrival')">Ibadan</a>
+                      <a href="#" onclick="selectDestination(event, 'Owerri', 'arrival')">Owerri</a>
+                      <a href="#" onclick="selectDestination(event, 'Kaduna', 'arrival')">Kaduna</a>
                     </div>
                   </div>
                 </div>
@@ -161,7 +162,7 @@
                   <input type="time" id="time" readonly />
                 </div>
                 <div class ="booking__btn">
-                  <button id="" class="btn book-now-btn">Book Now</button>
+                  <button id="" class="btn book-now-btn"><i class="fas fa-search"></i> Search Trains</button>
                 </div>
               </form>
             </div>
@@ -509,9 +510,9 @@
           <p class="section__description">
             Subscribe to our newsletter to receive the latest news and exclusive offers every week. No spam.
           </p>
-          <form action="">
-            <input type="text" placeholder="Enter your email" />
-            <button class="sub-btn">Subscribe</button>
+          <form id="SubscribeForm">
+            <input type="email" placeholder="Enter your email" />
+            <button type="button" class="sub-btn">Subscribe</button>
           </form>
         </div>
       </div>
@@ -519,6 +520,16 @@
         Copyright © 2023 Silverline Web Designs. All rights reserved.
       </div>
     </footer>
+
+
+    <!-- Modal for subscription confirmation -->
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h4>Thank you for subscribing to SilverLine Express!</h4>
+      <p>We are thrilled to welcome you to our community. We look forward to keeping you updated with our latest news and exclusive offers!</p>
+    </div>
+  </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
