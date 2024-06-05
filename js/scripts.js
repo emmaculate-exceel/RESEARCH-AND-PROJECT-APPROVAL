@@ -42,12 +42,6 @@ function showArrivalDropdown() {
   document.getElementById("arrival-dropdown").classList.toggle("show");
 }
 
-function setFixedTime() {
-  document.querySelectorAll('input[type="time"]').forEach(input => {
-    input.value = "12:00";
-  });
-}
-
 function selectDestination(event, inputId) {
   event.preventDefault();
   document.getElementById(inputId).value = event.target.textContent;
