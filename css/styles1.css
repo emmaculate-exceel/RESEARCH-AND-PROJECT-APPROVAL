@@ -298,14 +298,14 @@ nav {
 }
 
 .booking {
-  max-width: 80px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  padding: 1.5rem 1rem;
   display: grid;
   gap: 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .booking__type {
@@ -334,18 +334,18 @@ nav {
 .booking__form {
   padding: 1.5rem 1rem;
   display: grid;
-  align-items: grid;
+  align-items: center;
   gap: 1rem;
   background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .booking__input {
   display: inline-flex;
   gap: 5px;
-  margin-right: 20px;
-  margin-bottom: 35px;
-  border-radius: 3px;
+  margin-right: 15px;
+  margin-bottom: 25px;
+  border-radius: 2px;
 }
 
 .booking__input label {
@@ -745,7 +745,7 @@ nav {
     padding: 1rem;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem; /* Adjust gap between input fields */
-    margin: center; 
+    margin: center;
   }
 
   .service__grid {
