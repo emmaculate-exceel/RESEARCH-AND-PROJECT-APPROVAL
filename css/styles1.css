@@ -298,15 +298,9 @@ nav {
 }
 
 .booking {
-<<<<<<< HEAD
   max-width: 100px;
   padding: 20px;
   margin: 0 auto;
-=======
-  max-width: 400px;
-  margin: auto;
-  padding: 1.5rem 1rem;
->>>>>>> 2a91309abe9e7b8a21a30e0d180f58637dce3072
   display: grid;
   gap: 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
@@ -327,7 +321,7 @@ nav {
 .booking__type > div {
   padding: 10px;
   color: var(--white);
-  border-radius: 2px;
+  border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -338,14 +332,9 @@ nav {
 }
 
 .booking__form {
-  padding: 1.5rem 1rem;
+  padding: 1.5rem;
   display: grid;
-<<<<<<< HEAD
-=======
-  align-items: center;
->>>>>>> 2a91309abe9e7b8a21a30e0d180f58637dce3072
   gap: 1rem;
-  grid-template-columns: repeat(3, 1fr); /* Ensure all elements in the form are of the same size */
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
 }
@@ -354,15 +343,10 @@ nav {
   display: inline-flex;
   flex-direction: column; /* Added to place label above input */
   gap: 5px;
-<<<<<<< HEAD
+  grid-template-columns: repeat(3, 1fr);
   margin-right: 30px;
   border-radius: 3px;
-  margin-bottom: 20px; /* Added to add space between label and input */
-=======
-  margin-right: 15px;
-  margin-bottom: 25px;
-  border-radius: 2px;
->>>>>>> 2a91309abe9e7b8a21a30e0d180f58637dce3072
+  margin-bottom: 15px; /* Added to add space between label and input */
 }
 
 .booking__input label {
@@ -373,25 +357,16 @@ nav {
 }
 
 .booking__input input {
-  width: 100%;
+  width: 110%;
   padding: 10px; /* reduced */
   font-size: 1rem; /* reduced */
   color: var(--text-dark);
   outline: none;
   border: 1px solid var(--extra-light);
-  border-radius: 3px;
+  border-radius: 5px;
+  flex-wrap: wrap; /* Ensures boxes wrap to the next line if there's not enough space */
+  justify-content: center; /* Centers the boxes horizontally */
   box-sizing: border-box; /* Ensures padding is included in width */
-}
-
-.tickettype {
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-
-.tickettype input[type="date"],
-.tickettype input[type="time"] {
-  padding: 3px; 
 }
 
 .booking__btn {
@@ -762,9 +737,9 @@ nav {
 
   .booking__form {
     padding: 1rem;
-    grid-template-columns: repeat(3, 1fr);
     gap: 1rem; /* Adjust gap between input fields */
     margin: center;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .service__grid {
@@ -991,4 +966,120 @@ nav {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+
+/* About us */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #ffffff;
+}
+
+.section {
+  padding: 100px 0;
+  background: #dcdcdc;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #336a41;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin: 20px 0;
+  color: #336a41;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.content p, .content ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content ul li {
+  background: url('../assets/check.png') no-repeat left center;
+  background-size: 20px;
+  padding-left: 30px;
+  margin: 10px 0;
+}
+
+.social {
+  margin: 20px 0;
+}
+
+.social a {
+  text-decoration: none;
+  color: #555;
+  margin: 0 10px;
+  font-size: 1.5em;
+}
+
+.social a:hover {
+  color: #000;
+}
+
+.footer-content {
+  background: #16a34a;
+  color: #16a34a;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #ffffff;
+}
+
+.info-box-container {
+  display: inline-block;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers the boxes horizontally */
+}
+
+.info-box {
+  display: inline-block;
+  flex: 1 1 300px; /* Adjust the width as needed */
+  background-color: #336a41;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.info-box h4 {
+  color: #ffffff;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  color: #dadada;
+  font-size: 1rem;
 }
