@@ -298,9 +298,15 @@ nav {
 }
 
 .booking {
+<<<<<<< HEAD
+  max-width: 100px;
+  padding: 20px;
+  margin: 0 auto;
+=======
   max-width: 400px;
   margin: auto;
   padding: 1.5rem 1rem;
+>>>>>>> 2a91309abe9e7b8a21a30e0d180f58637dce3072
   display: grid;
   gap: 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
@@ -334,24 +340,36 @@ nav {
 .booking__form {
   padding: 1.5rem 1rem;
   display: grid;
+<<<<<<< HEAD
+=======
   align-items: center;
+>>>>>>> 2a91309abe9e7b8a21a30e0d180f58637dce3072
   gap: 1rem;
+  grid-template-columns: repeat(3, 1fr); /* Ensure all elements in the form are of the same size */
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
 }
 
 .booking__input {
   display: inline-flex;
+  flex-direction: column; /* Added to place label above input */
   gap: 5px;
+<<<<<<< HEAD
+  margin-right: 30px;
+  border-radius: 3px;
+  margin-bottom: 20px; /* Added to add space between label and input */
+=======
   margin-right: 15px;
   margin-bottom: 25px;
   border-radius: 2px;
+>>>>>>> 2a91309abe9e7b8a21a30e0d180f58637dce3072
 }
 
 .booking__input label {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--white);
+  margin-bottom: 5px;
 }
 
 .booking__input input {
@@ -362,17 +380,18 @@ nav {
   outline: none;
   border: 1px solid var(--extra-light);
   border-radius: 3px;
+  box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 .tickettype {
-  display: center;
+  display: flex;
   justify-content: space-between;
   margin: 20px 0;
 }
 
 .tickettype input[type="date"],
 .tickettype input[type="time"] {
-  padding: 3px;
+  padding: 3px; 
 }
 
 .booking__btn {
@@ -830,13 +849,19 @@ nav {
 
 .dropdown-content a {
   color: black;
-  padding: 12px 16px;
+  width: 100%;
+  padding: 10px;
   text-decoration: none;
+  border-bottom: 1px solid var(--extra-light);
   display: block; /* Ensure links are displayed as blocks */
 }
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
 }
 
 .show {
