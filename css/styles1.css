@@ -968,7 +968,6 @@ nav {
   cursor: pointer;
 }
 
-
 /* About us */
 body {
   font-family: Arial, sans-serif;
@@ -1011,7 +1010,8 @@ body {
   margin-top: 50px;
 }
 
-.content p, .content ul {
+.content p,
+.content ul {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
@@ -1023,7 +1023,7 @@ body {
 }
 
 .content ul li {
-  background: url('../assets/check.png') no-repeat left center;
+  background: url("../assets/check.png") no-repeat left center;
   background-size: 20px;
   padding-left: 30px;
   margin: 10px 0;
@@ -1071,7 +1071,7 @@ body {
   margin: 10px;
   text-align: center;
   padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .info-box h4 {

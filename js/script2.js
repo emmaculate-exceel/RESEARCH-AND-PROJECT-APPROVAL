@@ -1,11 +1,24 @@
-const wrapper = document.querySelector(".wrapper");
-const registerLink = document.querySelector(".register-link");
-const loginLink = document.querySelector(".login-link");
+let signupBtn = document.getElementById("signupBtn");
+let signinBtn = document.getElementById("signinBtn");
+let nameField = document.getElementById("nameField");
+let lastname = document.getElementById("lastname");
+let number = document.getElementById("number");
+let title = document.getElementById("title");
 
-registerLink.onclick = () => {
-  wrapper.classList.add("active");
+signinBtn.onclick = function () {
+  nameField.style.maxHeight = "0";
+  lastname.style.maxHeight = "0";
+  number.style.maxHeight = "0";
+  title.innerHTML = "Login";
+  signupBtn.classList.add("disable");
+  signinBtn.classList.remove("disable");
 };
 
-loginLink.onclick = () => {
-  wrapper.classList.remove("active");
+signupBtn.onclick = function () {
+  nameField.style.maxHeight = "60px";
+  lastname.style.maxHeight = "60px";
+  number.style.maxHeight = "60px";
+  title.innerHTML = "Sign Up";
+  signupBtn.classList.remove("disable");
+  signinBtn.classList.add("disable");
 };
