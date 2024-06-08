@@ -298,9 +298,9 @@ nav {
 }
 
 .booking {
-  max-width: 100px;
-  padding: 20px;
-  margin: 0 auto;
+  max-width: 400px;
+  padding: 1.5rem 1rem;
+  margin: auto;
   display: grid;
   gap: 1.5rem;
   background-color: rgba(255, 255, 255, 0.2);
@@ -332,11 +332,26 @@ nav {
 }
 
 .booking__form {
-  padding: 1.5rem;
+  padding: 1.5rem 1rem;
   display: grid;
+  align-items: center;
   gap: 1rem;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 2px;
+}
+
+.booking__input input {
+  width: 100%;
+  padding: 5px;
+  /* display: grid; */
+  font-size: 1rem;
+  color: var(--text-dark);
+  outline: none;
+  border: 1px solid var(--extra-light);
+  border-radius: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* gap: 5px; */
 }
 
 .booking__input {
@@ -353,25 +368,12 @@ nav {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--white);
-  margin-bottom: 5px;
-}
-
-.booking__input input {
-  width: 110%;
-  padding: 10px; /* reduced */
-  font-size: 1rem; /* reduced */
-  color: var(--text-dark);
-  outline: none;
-  border: 1px solid var(--extra-light);
-  border-radius: 5px;
-  flex-wrap: wrap; /* Ensures boxes wrap to the next line if there's not enough space */
-  justify-content: center; /* Centers the boxes horizontally */
-  box-sizing: border-box; /* Ensures padding is included in width */
+  /* margin-bottom: 5px; */
 }
 
 .booking__btn {
   text-align: right;
-  grid-column-start: 1;
+  grid-column-start: 3;
 }
 
 .service__grid {
@@ -912,6 +914,18 @@ nav {
   height: 220px;
   box-sizing: border-box;
 }
+/*Responsive for the modal*/
+/* @media (max-width: 600px) {
+  .moda-content {
+    width: 95%;
+    max-width: 95%;
+    margin: 10% auto;
+  }
+} */
+
+.anti {
+  color: #000;
+}
 
 .close-btn {
   color: #aaa;
@@ -931,9 +945,9 @@ nav {
 
 /* subscribe section */
 /* Styles for the modal */
-.modal {
+/* .modal {
   display: none;
-  position: fixed;
+  position: relative;
   z-index: 1;
   left: 0;
   top: 0;
@@ -951,7 +965,7 @@ nav {
   width: 80%;
   max-width: 400px;
   text-align: center;
-}
+} */
 
 /* Close button style */
 .close {
