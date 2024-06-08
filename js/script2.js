@@ -22,3 +22,21 @@ signupBtn.onclick = function () {
   signupBtn.classList.remove("disable");
   signinBtn.classList.add("disable");
 };
+
+// toggling of the password
+
+document
+  .getElementById("togglePassword")
+  .addEventListener("click", function (e) {
+    const passwordField = document.getElementById("password");
+    const passwordFieldType = passwordField.getAttribute("type");
+    const toggleButton = e.target;
+
+    if (passwordFieldType === "password") {
+      passwordField.setAttribute("type", "text");
+      toggleButton.textContent = "Hide";
+    } else {
+      passwordField.setAttribute("type", "password");
+      toggleButton.textContent = "";
+    }
+  });

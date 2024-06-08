@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Silverline signin page</title>
     <link rel="stylesheet" href="./css/styles3.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <script
       src="https://kit.fontawesome.com/c4254e24a8.js"
       crossorigin="anonymous"
@@ -17,28 +21,34 @@
         <form>
           <div class="input-group">
             <div class="input-field" id="nameField">
-              <i class="fa-solid fa-user"></i>
-              <input type="firstname" placeholder="Name" />
+              <i class="bx bxs-user"></i>
+              <input type="firstname" placeholder="Name" required />
             </div>
 
             <div class="input-field" id="lastname">
-              <i class="fa-solid fa-envelope"></i>
-              <input type="lastname" placeholder="Last Name" />
+              <i class="bx bxs-user"></i>
+              <input type="lastname" placeholder="Last Name" required />
             </div>
 
             <div class="input-field" id="number">
-              <i class="fa-solid fa-lock"></i>
-              <input type="number" placeholder="Phone number" />
+              <!-- <i class="bx bxs-phone"></i> -->
+              <i class="bx bxs-phone-call"></i>
+              <input type="number" placeholder="Phone number" required />
             </div>
 
             <div class="input-field">
-              <i class="fa-solid fa-lock"></i>
-              <input type="email" placeholder="Email" />
+              <i class="bx bxs-envelope"></i>
+              <input type="email" placeholder="Email" required />
             </div>
 
-            <div class="input-field">
-              <i class="fa-solid fa-lock"></i>
-              <input type="password" placeholder="Password" />
+            <div class="input-field" id="pass">
+              <i class="bx bxs-lock-alt" id="togglePassword"></i>
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+              />
             </div>
 
             <p>Lost password? <a href="#">Click Here!</a></p>
