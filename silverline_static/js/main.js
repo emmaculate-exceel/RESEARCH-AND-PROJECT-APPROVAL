@@ -5,13 +5,13 @@ var i = 0;
 function sliderImg() {
   var time = 10000;
   var images = [
-    "./assets/header.jpg",
-    "./assets/sl1.jpg",
-    "./assets/sl2.jpg",
-    "./assets/sl4.jpg",
-    "./assets/train1.jpg",
-    "./assets/sl6.jpg",
-    "./assets/sl7.jpg",
+    '../silverline_static/assets/header.jpg',
+    '../silverline_static/assets/sl1.jpg',
+    '../silverline_static/assets/sl2.jpg',
+    '../silverline_static/assets/sl4.jpg',
+    '../silverline_static/assets/train1.jpg',
+    '../silverline_static/assets/sl6.jpg',
+    '../silverline_static/assets/sl7.jpg'
   ];
   var h = document.getElementsByClassName("header");
   if (h.length > 0) {

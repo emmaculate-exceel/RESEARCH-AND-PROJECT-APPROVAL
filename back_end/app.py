@@ -1,11 +1,15 @@
 #!/usr/bin/python3
 #integration of files.
 """ connecting my frontend to my database """
-
+import os
 import MySQLdb
+from urllib.parse import quote_plus
 if __name__ == "__main__":
     #connection to the db
-    db = MySQLdb.connect(host="100.25.129.60", port=3306, user="root", passwd="root", db="SILVERLINE_EXPRESS")
+    user = os.getenv("DB_USER")
+    paswd = os.getenv("DB_PASSWORD")
+
+    db = MySQLdb.connect(host="100.25.129.60", port=3306, user=user, passwd=paswd, database="RECOVER_YOUR_DATA")
 
     #check if connected
     if db:
