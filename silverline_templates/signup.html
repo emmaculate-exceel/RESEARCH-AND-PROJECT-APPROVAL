@@ -3,72 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!--/*<<<<<<< HEAD:signup.html
-    <title>Silverline signin page</title>
-    <link rel="stylesheet" href="../silverline_static/css/styles3.css" />
-=======*/-->
     <title>Login</title>
     <link rel="stylesheet" href="../silverline_static/css/styles3.css" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/c4254e24a8.js"
-      crossorigin="anonymous"
-    ></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="contain">
       <div class="form-box">
         <h1 id="title">Sign Up</h1>
-        <form>
+        <form action="/login" method="POST">
           <div class="input-group">
             <div class="input-field" id="nameField">
               <i class="bx bxs-user"></i>
-              <input type="firstname" placeholder="First Name" required />
+              <input type="firstname" placeholder="First Name" name="user_name" required />
             </div>
-
-<!--<<<<<<< HEAD:signup.html-->
             <div class="input-field" id="lastname">
               <i class="bx bxs-user"></i>
-              <input type="lastname" placeholder="Last Name" required />
+              <input type="lastname" placeholder="Last Name" name="user_lastname" required />
             </div>
 
             <div class="input-field" id="number">
               <!-- <i class="bx bxs-phone"></i> -->
               <i class="bx bxs-phone-call"></i>
-              <input type="number" placeholder="Phone number" required />
+              <input type="number" placeholder="Phone number" name="user_phone" required />
             </div>
 
             <div class="input-field">
               <i class="bx bxs-envelope"></i>
-              <input type="email" placeholder="Email" required />
+              <input type="email" placeholder="Email" name="user_email" required />
             </div>
 
             <div class="input-field" id="pass">
               <i class="bx bxs-lock-alt" id="togglePassword"></i>
               <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                required
-              />
+                type="password" id="password" placeholder="Password" name="user_password" required/>
             </div>
-
-            <p>Lost password? <a href="#">Click Here!</a></p>
-<!--=======
-      <div class="form-box login">
-        <h2 class="animation" style="--i: 0">Login</h2>
-        <form action="user" method="POST">
-          <div class="input-box animation" style="--i: 1">
-            <input type="text" required />
-            <label>Username</label>
-            <i class="bx bxs-user"></i>
->>>>>>> be6ec24 (Structure folders):silverline_templates/signup.html-->
+	    <p>Lost password? <a href="#">Click Here!</a></p>
           </div>
-
-          <div class="btn-field">
+	  <div class="btn-field">
             <button type="button" id="signupBtn">Sign Up</button>
             <button type="button" id="signinBtn" class="disable">Login</button>
           </div>
@@ -133,8 +106,8 @@
           Lorem ipsum, dolor sit amet consectetur adipisicing
         </p>
       </div>
->>>>>>> be6ec24 (Structure folders):silverline_templates/signup.html -->
-    </div>
+>>>>>>> be6ec24 (Structure folders):silverline_templates/signup.html
+    </div>-->
 
     <script src="../silverline_static/js/script2.js"></script>
   </body>
