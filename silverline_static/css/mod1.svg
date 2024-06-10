@@ -5,7 +5,7 @@
  width="1280.000000pt" height="954.000000pt" viewBox="0 0 1280.000000 954.000000"
  preserveAspectRatio="xMidYMid meet">
 <metadata>
-Created by potrace 1.15, written by Peter Selinger 2001-2017
+SILVERLINE_EXPRESS
 </metadata>
 <g transform="translate(0.000000,954.000000) scale(0.100000,-0.100000)"
 fill="#FFFFFF" stroke="none">
@@ -152,4 +152,5 @@ c0 -5 31 -74 70 -152 279 -568 613 -900 1020 -1012 117 -33 348 -45 481 -25
 -32 115 -36 166 -10 64 32 106 119 89 185 -9 37 -56 87 -101 107 -44 20 -65
 22 -109 9z"/>
 </g>
+<text x="50" y="50" font-family="Arial" font-size="24" fill="black">SILVERLINE</text>
 </svg>
