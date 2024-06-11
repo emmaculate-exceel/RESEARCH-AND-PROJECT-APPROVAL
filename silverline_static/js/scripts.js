@@ -42,10 +42,10 @@ function showArrivalDropdown() {
   document.getElementById("arrival-dropdown").classList.toggle("show");
 }
 
-function selectDestination(event, inputId) {
-  event.preventDefault();
-  document.getElementById(inputId).value = event.target.textContent;
-  document.getElementById(inputId + "-dropdown").classList.remove("show");
+function selectDestination(inputId) {
+  //event.preventDefault();
+  document.getElementById("inputId").value = event.target.textContent;
+  //document.getElementById(inputId + "-dropdown").classList.remove("show");
 }
 
 document.addEventListener("DOMContentLoaded", function () {

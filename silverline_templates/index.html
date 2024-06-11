@@ -80,9 +80,9 @@
                   <div class="booking__input">
                       <label for="one-way-departure">From</label>
                       <div class="dropdown">
-                          <input type="text" id="one-way-departure" placeholder="Departure" onclick="showDepartureDropdown('departure-dropdown-one-way')" readonly/>
+                        <input type="text" id="one-way-departure" placeholder="Departure" onclick="showDepartureDropdown('departure-dropdown-one-way')" />
                           <div class="dropdown-content" id="one-way-departure-dropdown">
-                              <a href="#" onclick="selectDestination(event, 'Lagos', 'one-way-departure')">Lagos</a>
+                              <a href="#" id="inputId" onclick="selectDestination()">Lagos</a>
                               <a href="#" onclick="selectDestination(event, 'Abuja', 'one-way-departure')">Abuja</a>
                               <a href="#" onclick="selectDestination(event, 'Ibadan', 'one-way-departure')">Ibadan</a>
                               <a href="#" onclick="selectDestination(event, 'Owerri', 'one-way-departure')">Owerri</a>

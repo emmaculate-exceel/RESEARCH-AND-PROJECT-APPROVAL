@@ -5,7 +5,7 @@ import os
 import sys
 import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask import Flask , render_template, request
+from flask import Flask , render_template, request, redirect, url_for, flash, session
 from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
@@ -16,14 +16,14 @@ passwd = os.getenv("DB_PASSWORD")
 engine = create_engine(f"mysql://{user}:{passwd}@100.25.129.60:3306/SILVERLINE_EXPRESS")
 
 app = Flask(__name__, static_folder="silverline_static" , template_folder = "silverline_templates")
-
+app.secret_key = "emmanuel"
 if engine:
     print("connected to the database !!!")
     
 # creating a session for the database
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
-session = Session()
+session_db = Session()
 
 # CREATING USERS / REQUESTS table for the DATABASE
 
@@ -57,13 +57,13 @@ Base.metadata.create_all(engine)
 def home():
     return render_template("index.html")
 
-@app.route('/login')
-def login_form():
+@app.route('/signup')
+def form():
     return render_template('signup.html')
 
-@app.route('/login', methods=['POST'])
-def add_user_login():
-# automating users data's for the database """
+@app.route('/signup', methods=['POST'])
+def user_signup():
+    # automating users data's for the database """
     try:
         user_name = request.form["user_name"]
         user_lastname = request.form["user_lastname"]
@@ -73,17 +73,69 @@ def add_user_login():
 
         session = Session()
         new_user = SILVERLINE_USERS(NAME=user_name, LASTNAME=user_lastname, EMAIL=user_email, PASSWORD_HASH=user_password, PHONE=user_phone)
-        session.add(new_user)
-        session.commit()
-        session.close()
-        return "<h1 style=>User Account Created Successfully!!!</h1>"
+        session_db.add(new_user)
+        session_db.commit()
+        session_db.close()
+        return "<h1 style='text-align:center';>User Account Created Successfully!!!</h1>"
     except Exception as e:
     # Rollback changes
-        session.rollback()
+        session_db.rollback()
         return str(e)
     finally:
     # Close Session
-        session.close()
+        session_db.close()
+
+@app.route('/login', methods=["POST"])
+def login_form():
+    return render_template('signup.html')
+
+@app.route('/login', methods=["POST"])
+def login():
+    try:
+        email = request.form["login_email"]
+        password = request.form["login_password"]
+
+        session_db = Session()
+        user = session_db.query(SILVERLINE_USERS).filter_by(EMAIL=email).first()
+        
+        if user and check_password_hash(user.PASSWORD_HASH, password):
+            session['user_id'] = user.ID
+            session['user_name'] = user.NAME
+            flash ('Login successful!!', "success")
+            return render_template("/dashboard.html")
+        else:
+            flash("Invalid email or password", "danger")
+            return render_template('/signup.html')
+        
+    except Exception as e:
+        return str(e)
+    finally:
+        session_db.close()
+        
+###sign out lines for the page ::
+@app.route('/signup')
+def logout():
+    session.pop("user_id", None)
+    session.pop("user_name", None)
+    flash("You have been logged out", "success")
+    return render_template('/signup.html')
+
+## protecting routes that required authentication
+def login_required(f):
+    @wraps(f)
+    def decor_func(*args, **kwargs):
+        if "user_id" not in session:
+            flash("You need to login first.", "danger")
+            return render_template('/signup.html')
+        return f(*args, **kwargs)
+    return decor_func
+
+####
+######login page
+@app.route("/dashboard")
+@login_required
+def dashboard():
+    return render_template("dashboard.html")
 
 #handling client booking 
 @app.route('/booking', methods=['POST'])
