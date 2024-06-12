@@ -9,6 +9,7 @@ from flask import Flask , render_template, request, redirect, url_for, flash, se
 from sqlalchemy import create_engine, Column, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+from functools import wraps
 
 user = os.getenv("DB_USER")
 passwd = os.getenv("DB_PASSWORD")
@@ -101,10 +102,12 @@ def login():
         if user and check_password_hash(user.PASSWORD_HASH, password):
             session['user_id'] = user.ID
             session['user_name'] = user.NAME
-            flash ('Login successful!!', "success")
+#            flash ('Login successful!!', "success")
+            print("login successfully")
             return render_template("/dashboard.html")
         else:
-            flash("Invalid email or password", "danger")
+#            flash("Invalid email or password", "danger")
+            print("login failed")
             return render_template('/signup.html')
         
     except Exception as e:
@@ -117,7 +120,7 @@ def login():
 def logout():
     session.pop("user_id", None)
     session.pop("user_name", None)
-    flash("You have been logged out", "success")
+#    flash("You have been logged out", "success")
     return render_template('/signup.html')
 
 ## protecting routes that required authentication
@@ -125,7 +128,7 @@ def login_required(f):
     @wraps(f)
     def decor_func(*args, **kwargs):
         if "user_id" not in session:
-            flash("You need to login first.", "danger")
+#            flash("You need to login first.", "danger")
             return render_template('/signup.html')
         return f(*args, **kwargs)
     return decor_func
@@ -162,3 +165,6 @@ def booking():
         return str(e)
     finally:
         session.close()
+
+if __name__ == "__main__":
+    app.run(debug=True)
