@@ -26,7 +26,9 @@ signinBtn.onclick = function () {
   signupBtn.classList.add("disable");
   signinBtn.classList.remove("disable");
 };
-
+if (form.getAttribute("action") == "/login"){
+    signinBtn.type = "submit";
+}
 signupBtn.onclick = function () {
   nameField.style.maxHeight = "60px";
   lastname.style.maxHeight = "60px";
@@ -38,7 +40,9 @@ signupBtn.onclick = function () {
   signupBtn.classList.remove("disable");
   signinBtn.classList.add("disable");
 };
-
+if (form.getAttribute("action") == "/signup"){
+    signupBtn.type = "submit";
+}
 // toggling of the password
 
 document.getElementById("togglePassword").addEventListener("click", function (e) {
