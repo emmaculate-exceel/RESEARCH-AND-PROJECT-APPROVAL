@@ -1,3 +1,14 @@
+// Add this JavaScript to handle the form toggling
+document.getElementById('showSignupBtn').addEventListener('click', function() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        });
+document.getElementById('showLoginBtn').addEventListener('click', function() {
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('loginForm').style.display = 'block';
+});
+
+// Existing JavaScript for the signup and signin button functionalities
 let signupBtn = document.getElementById("signupBtn");
 let signinBtn = document.getElementById("signinBtn");
 let nameField = document.getElementById("nameField");
@@ -23,20 +34,17 @@ signupBtn.onclick = function () {
   signinBtn.classList.add("disable");
 };
 
-// toggling of the password
+// Toggling of the password
+document.getElementById("togglePassword").addEventListener("click", function (e) {
+  const passwordField = document.getElementById("password");
+  const passwordFieldType = passwordField.getAttribute("type");
+  const toggleButton = e.target;
 
-document
-  .getElementById("togglePassword")
-  .addEventListener("click", function (e) {
-    const passwordField = document.getElementById("password");
-    const passwordFieldType = passwordField.getAttribute("type");
-    const toggleButton = e.target;
-
-    if (passwordFieldType === "password") {
+  if (passwordFieldType === "password") {
       passwordField.setAttribute("type", "text");
       toggleButton.textContent = "Hide";
-    } else {
-      passwordField.setAttribute("type", "password");
-      toggleButton.textContent = "";
-    }
-  });
+  } else {
+  passwordField.setAttribute("type", "password");
+  toggleButton.textContent = "";
+  }
+});
