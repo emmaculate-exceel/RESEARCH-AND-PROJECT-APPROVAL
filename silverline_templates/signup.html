@@ -9,6 +9,17 @@
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
   </head>
   <body>
+	<!--please do not tamper with the codes below they are for my jinja flash messages -->
+    <!-- Flash message display -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
     <div class="contain">
 	<div class="form-box " id="signupForm">
         <h1 id="title">Sign Up</h1>
