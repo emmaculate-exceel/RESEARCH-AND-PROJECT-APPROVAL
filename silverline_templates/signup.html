@@ -53,14 +53,14 @@
 	  function sendEmail(){ 
 	  Email.send({
 	      Host : "smtp.elasticemail.com",
-	      Username : "emmaculate2exceel@gmail.com",
+	      Username : "silverline.express4you@gmail.com",
 	      Password : "0987654321",
-	      To : 'emmaculate2exceel@gmail.com',
-	      From :document.getElementById("eMail").value,
-	      Subject : "This is the subject",
-	      Body : "Name: "+ document.getElementById("Name").value +"<br>Email: "+ document.getElementById("eMail").value + "<br> Phone no: "+ document.getElementById("Phone").value
+	      To : document.getElementById("eMail").value,
+	      From :"silverline.express4you@gmail.com",
+	      Subject : "Confirmation message for Account Creation!",
+	      Body : 'Your Registration Details are'+ "<br>" "Name: "+ document.getElementById("Name").value +"<br>Email: "+ document.getElementById("eMail").value + "<br> Phone no: "+ document.getElementById("Phone").value
 	  }).then(
-	      message => alert("User Created Successfully!!")
+	      message => alert("Account Created Successfully!!/n kindly wait for a confirmation email!")
 	  );
 	  }
 	</script>
