@@ -53,13 +53,13 @@
 
           <div>
             <label for="train station">Train Station</label>
-            <input
+            <!-- <input
               type="text"
               placeholder="Nearest Train Station"
               class="nearest-train"
               required
-            />
-            <!-- <select name="Choose Train Station" id="train-station">
+            /> -->
+            <select name="Choose Train Station" id="train-station">
               <option value="Lagos Railway Station">
                 Lagos Railway Station
               </option>
@@ -73,7 +73,7 @@
               <option value="Blue Line Marina Train Station">
                 Blue Line Marina Train Station
               </option>
-            </select> -->
+            </select>
           </div>
 
           <div>
@@ -142,12 +142,23 @@
       <div class="header__map" id="map"></div>
     </header>
 
-    <div class="overlay hidden">
+    <!-- <div class="overlay hidden">
       <form action="#" class="overlay__form">
         <h2>Pay for Seat</h2>
         <input type="number" placeholder="Card Number" />
         <input type="number" placeholder="CVV" />
         <input type="number" placeholder="Card Date" />
+
+        <button type="submit">Pay</button>
+      </form>
+    </div> -->
+
+    <div class="overlay hidden">
+      <form action="#" class="overlay__form">
+        <h2>Pay for Seat</h2>
+        <input type="number" placeholder="Card Number" class="card-number" />
+        <input type="number" placeholder="CVV" class="cvv-card" />
+        <input type="date" placeholder="Card Date" class="card-date" />
 
         <button type="submit">Pay</button>
       </form>

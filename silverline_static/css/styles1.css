@@ -779,9 +779,10 @@ nav {
   }
 
   .modal-content {
+    color: black;
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
+    padding: 40px;
     border: 1px solid #888;
     width: 80%;
     max-width: 400px;
