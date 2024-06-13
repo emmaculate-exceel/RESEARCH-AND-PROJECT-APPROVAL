@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <link rel='icon' type='image/x-icon' href='../silverline_static/css/trainH.svg'/>
     <link rel="stylesheet" href="../silverline_static/css/styles3.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
     <div class="contain">
 	<div class="form-box " id="signupForm">
         <h1 id="title">Sign Up</h1>
-        <form action="/signup" method="POST">
+        <form action="/signup" method="POST" onsubmit="sendEmail()">  
           <div class="input-group">
             <div class="input-field" id="nameField">
               <i class="bx bxs-user"></i>
-              <input type="text" placeholder="First Name" name="user_name" required />
+              <input type="text" placeholder="First Name" id="Name" name="user_name" required />
             </div>
             <div class="input-field" id="lastname">
               <i class="bx bxs-user"></i>
@@ -25,11 +27,11 @@
             <div class="input-field" id="number">
               <!-- <i class="bx bxs-phone"></i> -->
               <i class="bx bxs-phone-call"></i>
-              <input type="number" placeholder="Phone number" name="user_phone" required />
+              <input type="number" id="Phone" placeholder="Phone number" name="user_phone" required />
             </div>
             <div class="input-field">
               <i class="bx bxs-envelope"></i>
-              <input type="email" placeholder="Email" name="user_email" required />
+              <input type="email" id='eMail' placeholder="Email" name="user_email" required />
             </div>
             <div class="input-field" id="pass">
               <i class="bx bxs-lock-alt" id="togglePassword"></i>
@@ -46,6 +48,21 @@
 	<script src="../silverline_static/js/script5.js"></script>
 	<script>
 	  alert("{{ message }}");
+	</script>
+	<script>
+	  function sendEmail(){ 
+	  Email.send({
+	      Host : "smtp.elasticemail.com",
+	      Username : "emmaculate2exceel@gmail.com",
+	      Password : "0987654321",
+	      To : 'emmaculate2exceel@gmail.com',
+	      From :document.getElementById("eMail").value,
+	      Subject : "This is the subject",
+	      Body : "Name: "+ document.getElementById("Name").value +"<br>Email: "+ document.getElementById("eMail").value + "<br> Phone no: "+ document.getElementById("Phone").value
+	  }).then(
+	      message => alert("User Created Successfully!!")
+	  );
+	  }
 	</script>
   </body>
 </html>
