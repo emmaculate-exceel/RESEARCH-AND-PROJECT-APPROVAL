@@ -321,7 +321,7 @@ nav {
 .booking__type > div {
   padding: 10px;
   color: var(--white);
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -342,13 +342,13 @@ nav {
 
 .booking__input input {
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   /* display: grid; */
   font-size: 1rem;
   color: var(--text-dark);
   outline: none;
   border: 1px solid var(--extra-light);
-  border-radius: 5px;
+  border-radius: 2px;
   flex-wrap: wrap;
   justify-content: center;
   /* gap: 5px; */
