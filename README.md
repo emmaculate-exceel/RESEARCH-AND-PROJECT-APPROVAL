@@ -1,1 +1,1 @@
-Research-and-Project-Approval
+Research-and-Project-Approval as a personal project
