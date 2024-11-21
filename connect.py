@@ -1,6 +1,10 @@
-#!/usr/bin/python3
-# creating a CRUD operation using sqlalchemy
-
+#!/usr/bin/python3# creating a CRUD operation using sqlalchemy
+"""
+  making use of sqlalchemy for generating a crud operation
+  using flask for routing of pages
+  using flask for authorization methods
+"""
+ 
 import os
 import sys
 import datetime
