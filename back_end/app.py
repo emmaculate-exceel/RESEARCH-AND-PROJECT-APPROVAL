@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-#integration of files.
+
+
 """ connecting my frontend to my database """
 import os
 import MySQLdb
 from urllib.parse import quote_plus
+
+
 if __name__ == "__main__":
     #connection to the db
     user = os.getenv("DB_USER")
