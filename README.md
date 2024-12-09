@@ -6,3 +6,5 @@ please kindly note that to get the best of this web application it will be best 
 
 
 + NOTE : the project is developed using flask
+
+FLASK_APP
